@@ -14,13 +14,16 @@ import RealmSwift
 class HomeViewModel {
     public let accounts: Results<Account>
     public let loading: PublishSubject<Bool> = PublishSubject()
-    private let rate = 1.2 // mock rate
     
     init() {
         accounts = DBManager.sharedInstance.accountRepository.getAll()
     }
     
-    func exchange(from source: Account, to destination: Account, amount: Double) {
+    func requestRate(base: Currency, quote: Currency) -> Observable<Rate> {
+        return ApiService.getCurrentRate(base: base, quote: quote)
+    }
+    
+    func exchange(from source: Account, to destination: Account, amount: Double, rate: Double) {
         self.loading.onNext(true)
         let outTransaction = Transaction()
         outTransaction.uuid = UUID().uuidString
