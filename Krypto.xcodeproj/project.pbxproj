@@ -17,6 +17,7 @@
 		329272072481D99700AD5DB6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329272062481D99700AD5DB6 /* Account.swift */; };
 		329272092481DC7400AD5DB6 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329272082481DC7400AD5DB6 /* Transaction.swift */; };
 		3292720B2481E2FF00AD5DB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292720A2481E2FF00AD5DB6 /* User.swift */; };
+		3292720F2482108E00AD5DB6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292720E2482108D00AD5DB6 /* HomeViewModel.swift */; };
 		4BB89191A31B3E37320BD1AE /* Pods_Krypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		329272062481D99700AD5DB6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		329272082481DC7400AD5DB6 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		3292720A2481E2FF00AD5DB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3292720E2482108D00AD5DB6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		84DEBA496C4E0FB6BE3FEF7D /* Pods-Krypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.debug.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.debug.xcconfig"; sourceTree = "<group>"; };
 		8A508099F2D6244A11C37F8E /* Pods-Krypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.release.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.release.xcconfig"; sourceTree = "<group>"; };
 		F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +73,7 @@
 		329271EE24808DE900AD5DB6 /* Krypto */ = {
 			isa = PBXGroup;
 			children = (
+				3292720D2482101100AD5DB6 /* viewModel */,
 				329272052481D96A00AD5DB6 /* model */,
 				329271EF24808DE900AD5DB6 /* AppDelegate.swift */,
 				329271F124808DE900AD5DB6 /* SceneDelegate.swift */,
@@ -92,6 +95,14 @@
 				3292720A2481E2FF00AD5DB6 /* User.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		3292720D2482101100AD5DB6 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3292720E2482108D00AD5DB6 /* HomeViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		378F035473302DBBC3DB81DC /* Pods */ = {
@@ -229,6 +240,7 @@
 				329272072481D99700AD5DB6 /* Account.swift in Sources */,
 				329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */,
 				329272092481DC7400AD5DB6 /* Transaction.swift in Sources */,
+				3292720F2482108E00AD5DB6 /* HomeViewModel.swift in Sources */,
 				329271F424808DE900AD5DB6 /* FirstViewController.swift in Sources */,
 				329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */,
 				329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */,
