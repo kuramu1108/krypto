@@ -20,8 +20,13 @@ class Transaction: Object {
     @objc dynamic var date = Date()
     @objc dynamic var from: String = ""
     @objc dynamic var to: String = ""
-    @objc dynamic var balance = 0.0
-    @objc dynamic var currency: String = ""
+    @objc dynamic var amount = 0.0
+    @objc private dynamic var privateCurrecny = Currency.BTC.rawValue
+    var currency:Currency {
+        get { return Currency(rawValue: privateCurrecny)! }
+        set { privateCurrecny = newValue.rawValue }
+    }
+    @objc dynamic var rate: Double = 1.0
     @objc dynamic var comment: String = ""
     
     override static func primaryKey() -> String? {
@@ -32,4 +37,5 @@ class Transaction: Object {
 enum TransactionType: Int {
     case Transfer = 1
     case Exchange = 2
+    case Deposit = 3
 }

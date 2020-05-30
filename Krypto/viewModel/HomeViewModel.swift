@@ -7,3 +7,49 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+import RealmSwift
+
+class HomeViewModel {
+    public let accounts: Results<Account>
+    public let loading: PublishSubject<Bool> = PublishSubject()
+    private let rate = 1.2 // mock rate
+    
+    init() {
+        accounts = DBManager.sharedInstance.accountRepository.getAll()
+    }
+    
+    func exchange(from source: Account, to destination: Account, amount: Double) {
+        self.loading.onNext(true)
+        let outTransaction = Transaction()
+        outTransaction.uuid = UUID().uuidString
+        outTransaction.type = TransactionType.Exchange
+        outTransaction.from = source.name
+        outTransaction.to = destination.name
+        outTransaction.amount = amount
+        outTransaction.rate = rate
+        outTransaction.comment = "exchange from \(source.currency.rawValue) to \(destination.currency.rawValue) (1 \(source.currency.rawValue) = \(rate) \(destination.currency.rawValue))"
+        
+        DBManager.sharedInstance.accountRepository.addTransaction(to: source, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(to: destination, transaction: outTransaction)
+        self.loading.onNext(false)
+    }
+    
+    func transfer(from source: Account, to destination: String, amount: Double) {
+        
+    }
+    
+    func deposit(to destination: Account, amount: Double, comment: String) {
+        self.loading.onNext(true)
+        let transaction = Transaction()
+        transaction.uuid = UUID().uuidString
+        transaction.type = TransactionType.Deposit
+        transaction.to = destination.name
+        transaction.amount = amount
+        transaction.comment = comment
+        
+        DBManager.sharedInstance.accountRepository.addTransaction(to: destination, transaction: transaction)
+        self.loading.onNext(false)
+    }
+}
