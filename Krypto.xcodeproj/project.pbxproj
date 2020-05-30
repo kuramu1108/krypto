@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		329271F924808DEA00AD5DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329271F724808DEA00AD5DB6 /* Main.storyboard */; };
 		329271FB24808DED00AD5DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329271FA24808DED00AD5DB6 /* Assets.xcassets */; };
 		329271FE24808DED00AD5DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329271FC24808DED00AD5DB6 /* LaunchScreen.storyboard */; };
+		329272072481D99700AD5DB6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329272062481D99700AD5DB6 /* Account.swift */; };
+		329272092481DC7400AD5DB6 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329272082481DC7400AD5DB6 /* Transaction.swift */; };
+		3292720B2481E2FF00AD5DB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292720A2481E2FF00AD5DB6 /* User.swift */; };
 		4BB89191A31B3E37320BD1AE /* Pods_Krypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		329271FA24808DED00AD5DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329271FD24808DED00AD5DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		329271FF24808DED00AD5DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		329272062481D99700AD5DB6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		329272082481DC7400AD5DB6 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		3292720A2481E2FF00AD5DB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		84DEBA496C4E0FB6BE3FEF7D /* Pods-Krypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.debug.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.debug.xcconfig"; sourceTree = "<group>"; };
 		8A508099F2D6244A11C37F8E /* Pods-Krypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.release.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.release.xcconfig"; sourceTree = "<group>"; };
 		F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +71,7 @@
 		329271EE24808DE900AD5DB6 /* Krypto */ = {
 			isa = PBXGroup;
 			children = (
+				329272052481D96A00AD5DB6 /* model */,
 				329271EF24808DE900AD5DB6 /* AppDelegate.swift */,
 				329271F124808DE900AD5DB6 /* SceneDelegate.swift */,
 				329271F324808DE900AD5DB6 /* FirstViewController.swift */,
@@ -77,13 +84,22 @@
 			path = Krypto;
 			sourceTree = "<group>";
 		};
+		329272052481D96A00AD5DB6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				329272062481D99700AD5DB6 /* Account.swift */,
+				329272082481DC7400AD5DB6 /* Transaction.swift */,
+				3292720A2481E2FF00AD5DB6 /* User.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		378F035473302DBBC3DB81DC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				84DEBA496C4E0FB6BE3FEF7D /* Pods-Krypto.debug.xcconfig */,
 				8A508099F2D6244A11C37F8E /* Pods-Krypto.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,10 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329272072481D99700AD5DB6 /* Account.swift in Sources */,
 				329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */,
+				329272092481DC7400AD5DB6 /* Transaction.swift in Sources */,
 				329271F424808DE900AD5DB6 /* FirstViewController.swift in Sources */,
 				329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */,
 				329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */,
+				3292720B2481E2FF00AD5DB6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
