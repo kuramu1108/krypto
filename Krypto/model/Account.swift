@@ -25,10 +25,10 @@ class Account: Object {
     }
 }
 
-enum Currency: Int {
-    case BTC = 1
-    case ETH = 2
-    case XRP = 3
-    case AUD = 4
-    case USD = 5
+enum Currency: String {
+    case BTC = "BTC"
+    case ETH = "ETH"
+    case XRP = "XRP"
+    case AUD = "AUD"
+    case USD = "USD"
 }

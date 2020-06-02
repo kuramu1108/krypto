@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class FirstViewController: UIViewController {
-
+    var vm = HomeViewModel()
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupBindings()
     }
-
+    
+    private func setupBindings() {
+        vm.accounts
+            .observeOn(MainScheduler.instance)
+            .subscribe { event in
+                print(event)
+            }
+            .disposed(by: disposeBag)
+    }
 
 }
 
