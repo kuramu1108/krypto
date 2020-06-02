@@ -12,7 +12,7 @@ import RxCocoa
 import RealmSwift
 
 class HomeViewModel {
-    public let accounts: Results<Account>
+    public let accounts: Observable<Results<Account>>
     public let loading: PublishSubject<Bool> = PublishSubject()
     
     init() {

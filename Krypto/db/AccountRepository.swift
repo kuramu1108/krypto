@@ -7,6 +7,9 @@
 //
 
 import RealmSwift
+import RxRealm
+import RxSwift
+import RxCocoa
 
 class AccountRepository {
     func createOrUpdate(account: Account) {
@@ -16,9 +19,9 @@ class AccountRepository {
         }
     }
     
-    func getAll() -> Results<Account> {
+    func getAll() -> Observable<Results<Account>> {
         let realm = try! Realm()
-        return realm.objects(Account.self)
+        return Observable.collection(from: realm.objects(Account.self))
     }
     
     func addTransaction(to account: Account, transaction: Transaction) {

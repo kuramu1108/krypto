@@ -7,6 +7,7 @@ target 'Krypto' do
   
     # db: Realm
     pod 'RealmSwift'
+    pod 'RxRealm'
   
     # rx
     pod 'RxSwift', '~> 5'
