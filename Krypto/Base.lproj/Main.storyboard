@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqX-Jy-5IQ">
-                                <rect key="frame" x="14" y="401" width="110" height="95"/>
+                                <rect key="frame" x="12" y="397" width="115" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="17"/>
-                                <state key="normal" title="Recharge" backgroundImage="Button">
+                                <state key="normal" title="Deposit" backgroundImage="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -118,7 +118,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Recent">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
@@ -128,7 +128,7 @@
                                     </fragment>
                                     <fragment content="transaction">
                                         <attributes>
-                                            <font key="NSFont" size="17" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="17"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -269,7 +269,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwD-fh-kyu">
                                 <rect key="frame" x="20" y="128" width="115" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ethereum" backgroundImage="Button"/>
+                                <state key="normal" title="ETH" backgroundImage="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-rG-gGN">
                                 <rect key="frame" x="159" y="128" width="115" height="104"/>
@@ -542,7 +542,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6H-Wf-lfD">
                                 <rect key="frame" x="17" y="150" width="115" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ethereum" backgroundImage="Button"/>
+                                <state key="normal" title="ETH" backgroundImage="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="192-Ta-nYv">
                                 <rect key="frame" x="150" y="150" width="115" height="104"/>
@@ -616,7 +616,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-UL-IXo">
                                 <rect key="frame" x="19" y="159" width="115" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Ethereum" backgroundImage="Button"/>
+                                <state key="normal" title="ETH" backgroundImage="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-aX-ibr">
                                 <rect key="frame" x="156" y="159" width="115" height="104"/>
