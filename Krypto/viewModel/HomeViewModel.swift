@@ -14,6 +14,7 @@ import RealmSwift
 class HomeViewModel {
     public let accounts: Observable<Results<Account>>
     public let loading: PublishSubject<Bool> = PublishSubject()
+//    public let btcRates: PublishSubject<Rate> = PublishSubject()
     
     init() {
         accounts = DBManager.sharedInstance.accountRepository.getAll()
