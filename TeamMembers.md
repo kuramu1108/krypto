@@ -12,7 +12,7 @@ Student ID: 11985963
 Email: 11985963@student.uts.edu.au
 
 Member 3: Yuhao Song
-Student ID: 13488554 6876867688687686
+Student ID: 13488554
 Email: 13488554@student.uts.edu.au
 
 
