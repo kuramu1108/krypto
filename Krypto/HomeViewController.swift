@@ -24,11 +24,16 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBindings() {
-//        let account = Account()
-//        account.name = "Cash Account"
-//        account.currency = Currency.USD
-//        account.balance = 10000.0
-//        DBManager.sharedInstance.accountRepository.createOrUpdate(account: account)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "exchangeSegue" {
+            guard let destinationVC = segue.destination as? ExchangeViewController else {
+                return
+            }
+            
+        }
     }
 }
 

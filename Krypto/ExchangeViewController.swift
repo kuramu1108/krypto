@@ -59,7 +59,7 @@ class ExchangeViewController: UIViewController {
                 self.rateUpdatingTimeTxt.text = String(self.updateTimeRemaining)
                 self.exchangeRateTxt.text = String(rate.rate)
                 self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                    if self.updateTimeRemaining >= 0 {
+                    if self.updateTimeRemaining > 0 {
                         self.updateTimeRemaining -= 1
                         self.rateUpdatingTimeTxt.text = String(self.updateTimeRemaining)
                     }
