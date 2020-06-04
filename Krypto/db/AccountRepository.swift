@@ -14,6 +14,9 @@ import RxCocoa
 class AccountRepository {
     func createOrUpdate(account: Account) {
         let realm = try! Realm()
+        if account.uuid == "" {
+            account.uuid = UUID().uuidString
+        }
         try! realm.write {
             realm.add(account, update: .modified)
         }
@@ -22,6 +25,12 @@ class AccountRepository {
     func getAll() -> Observable<Results<Account>> {
         let realm = try! Realm()
         return Observable.collection(from: realm.objects(Account.self))
+    }
+    
+    func getWith(currency: Currency) -> Observable<Results<Account>> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "privateCurrency = %@", currency.rawValue)
+        return Observable.collection(from: realm.objects(Account.self).filter(predicate))
     }
     
     func addTransaction(to account: Account, transaction: Transaction) {

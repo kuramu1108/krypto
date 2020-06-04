@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325D17AC24865466000ED681 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AB24865466000ED681 /* TransferViewController.swift */; };
+		325D17AE24865B27000ED681 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AD24865B27000ED681 /* ExchangeViewController.swift */; };
+		325D17D22488A0A8000ED681 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 325D17D12488A0A8000ED681 /* keys.plist */; };
+		325D17D52488C121000ED681 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17D42488C121000ED681 /* Constants.swift */; };
 		329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271EF24808DE900AD5DB6 /* AppDelegate.swift */; };
 		329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F124808DE900AD5DB6 /* SceneDelegate.swift */; };
-		329271F424808DE900AD5DB6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F324808DE900AD5DB6 /* FirstViewController.swift */; };
+		329271F424808DE900AD5DB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F324808DE900AD5DB6 /* HomeViewController.swift */; };
 		329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F524808DE900AD5DB6 /* SecondViewController.swift */; };
 		329271F924808DEA00AD5DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329271F724808DEA00AD5DB6 /* Main.storyboard */; };
 		329271FB24808DED00AD5DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329271FA24808DED00AD5DB6 /* Assets.xcassets */; };
@@ -23,15 +27,18 @@
 		3292721624821A7A00AD5DB6 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292721524821A7A00AD5DB6 /* TransactionRepository.swift */; };
 		329272192482361E00AD5DB6 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329272182482361E00AD5DB6 /* ApiService.swift */; };
 		3292721B2482430E00AD5DB6 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3292721A2482430E00AD5DB6 /* Rate.swift */; };
-		3292721D24824CFC00AD5DB6 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3292721C24824CFC00AD5DB6 /* keys.plist */; };
 		4BB89191A31B3E37320BD1AE /* Pods_Krypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325D17AB24865466000ED681 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
+		325D17AD24865B27000ED681 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		325D17D12488A0A8000ED681 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = keys.plist; path = ../keys.plist; sourceTree = "<group>"; };
+		325D17D42488C121000ED681 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		329271EC24808DE900AD5DB6 /* Krypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329271EF24808DE900AD5DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329271F124808DE900AD5DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		329271F324808DE900AD5DB6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		329271F324808DE900AD5DB6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		329271F524808DE900AD5DB6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		329271F824808DEA00AD5DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		329271FA24808DED00AD5DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +53,6 @@
 		3292721524821A7A00AD5DB6 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		329272182482361E00AD5DB6 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		3292721A2482430E00AD5DB6 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
-		3292721C24824CFC00AD5DB6 /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		84DEBA496C4E0FB6BE3FEF7D /* Pods-Krypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.debug.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.debug.xcconfig"; sourceTree = "<group>"; };
 		8A508099F2D6244A11C37F8E /* Pods-Krypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Krypto.release.xcconfig"; path = "Target Support Files/Pods-Krypto/Pods-Krypto.release.xcconfig"; sourceTree = "<group>"; };
 		F7BE2C52DA9D35492BBF93C9 /* Pods_Krypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Krypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		325D17D32488C10A000ED681 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				325D17D42488C121000ED681 /* Constants.swift */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		329271E324808DE900AD5DB6 = {
 			isa = PBXGroup;
 			children = (
@@ -85,19 +99,22 @@
 		329271EE24808DE900AD5DB6 /* Krypto */ = {
 			isa = PBXGroup;
 			children = (
+				325D17D32488C10A000ED681 /* config */,
 				32927217248235CB00AD5DB6 /* api */,
 				32927210248218E600AD5DB6 /* db */,
 				3292720D2482101100AD5DB6 /* viewModel */,
 				329272052481D96A00AD5DB6 /* model */,
 				329271EF24808DE900AD5DB6 /* AppDelegate.swift */,
 				329271F124808DE900AD5DB6 /* SceneDelegate.swift */,
-				329271F324808DE900AD5DB6 /* FirstViewController.swift */,
+				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 				329271F524808DE900AD5DB6 /* SecondViewController.swift */,
 				329271F724808DEA00AD5DB6 /* Main.storyboard */,
 				329271FA24808DED00AD5DB6 /* Assets.xcassets */,
 				329271FC24808DED00AD5DB6 /* LaunchScreen.storyboard */,
 				329271FF24808DED00AD5DB6 /* Info.plist */,
-				3292721C24824CFC00AD5DB6 /* keys.plist */,
+				325D17D12488A0A8000ED681 /* keys.plist */,
+				325D17AB24865466000ED681 /* TransferViewController.swift */,
+				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
 			);
 			path = Krypto;
 			sourceTree = "<group>";
@@ -216,7 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3292721D24824CFC00AD5DB6 /* keys.plist in Resources */,
+				325D17D22488A0A8000ED681 /* keys.plist in Resources */,
 				329271FE24808DED00AD5DB6 /* LaunchScreen.storyboard in Resources */,
 				329271FB24808DED00AD5DB6 /* Assets.xcassets in Resources */,
 				329271F924808DEA00AD5DB6 /* Main.storyboard in Resources */,
@@ -273,15 +290,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3292721624821A7A00AD5DB6 /* TransactionRepository.swift in Sources */,
+				325D17AE24865B27000ED681 /* ExchangeViewController.swift in Sources */,
+				325D17AC24865466000ED681 /* TransferViewController.swift in Sources */,
 				329272072481D99700AD5DB6 /* Account.swift in Sources */,
 				329272192482361E00AD5DB6 /* ApiService.swift in Sources */,
 				329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */,
 				329272092481DC7400AD5DB6 /* Transaction.swift in Sources */,
+				325D17D52488C121000ED681 /* Constants.swift in Sources */,
 				329272142482194F00AD5DB6 /* AccountRepository.swift in Sources */,
 				3292721B2482430E00AD5DB6 /* Rate.swift in Sources */,
 				3292720F2482108E00AD5DB6 /* HomeViewModel.swift in Sources */,
 				32927212248218FB00AD5DB6 /* DBManager.swift in Sources */,
-				329271F424808DE900AD5DB6 /* FirstViewController.swift in Sources */,
+				329271F424808DE900AD5DB6 /* HomeViewController.swift in Sources */,
 				329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */,
 				329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */,
 				3292720B2481E2FF00AD5DB6 /* User.swift in Sources */,
