@@ -45,21 +45,9 @@ class ExchangeViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        vm.requestRate(base: Currency.BTC, quote: Currency.USD)
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { rate in
-                self.exchangeRateTxt.text = String(rate.rate)
-            }, onCompleted: {
-                self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                    if self.updateTimeRemaining >= 0 {
-                        self.updateTimeRemaining -= 1
-                        self.rateUpdatingTimeTxt.text = String(self.updateTimeRemaining)
-                    }
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        let repeatTimer = Observable<Int>.interval(DispatchTimeInterval.seconds(10), scheduler: MainScheduler.instance)
+        let repeatTimer = Observable<Int>
+//            .interval(DispatchTimeInterval.seconds(10), scheduler: MainScheduler.instance)
+            .timer(.seconds(0), period: .seconds(Constants.RateUpdateInterval), scheduler: MainScheduler.instance)
             .flatMap { _ in
                 return self.vm.requestRate(base: Currency.BTC, quote: Currency.USD)
         }
