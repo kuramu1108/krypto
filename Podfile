@@ -15,4 +15,7 @@ target 'Krypto' do
     
     # api request
     pod 'Alamofire', '~> 5.2'
+    
+    # ui library
+    pod 'SwiftSpinner', '~> 2.1'
   end

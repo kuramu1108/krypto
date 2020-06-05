@@ -12,9 +12,11 @@ class DBManager {
     static let sharedInstance = DBManager()
     var accountRepository: AccountRepository
     var transactionRepository: TransactionRepository
+    var accountContactRepository: AccountContactRepository
     
     private init() {
         accountRepository = AccountRepository()
         transactionRepository = TransactionRepository()
+        accountContactRepository = AccountContactRepository()
     }
 }

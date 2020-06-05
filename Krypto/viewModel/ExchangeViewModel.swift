@@ -12,26 +12,37 @@ import RxCocoa
 import RealmSwift
 
 class ExchangeViewModel {
-    public var fromAccount: BehaviorRelay<Account>
-    public var toAccount: BehaviorRelay<Account>
+    public var fromAccount: Account
+    public var toAccount: Account
     public let refreshCounter: BehaviorSubject<Int> = BehaviorSubject(value: 0)
+    public let loading: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     
     init(fromAcc: Account, toAcc: Account) {
-        fromAccount = BehaviorRelay(value: fromAcc)
-        toAccount = BehaviorRelay(value: toAcc)
+        fromAccount = fromAcc
+        toAccount = toAcc
+    }
+    
+    func requestRate(base: Currency, quote: Currency) -> Observable<Rate> {
+        return ApiService.getCurrentRate(base: base, quote: quote)
+    }
+    
+    func finishedLoading() {
+        if loading.value {
+            loading.accept(false)
+        }
     }
     
     func exchange(amount: Double, rate: Double) {
         let outTransaction = Transaction()
         outTransaction.uuid = UUID().uuidString
         outTransaction.type = TransactionType.Exchange
-        outTransaction.fromAccount = fromAccount.value.name
-        outTransaction.toAccount = toAccount.value.name
+        outTransaction.fromAccount = fromAccount.name
+        outTransaction.toAccount = toAccount.name
         outTransaction.amount = amount
         outTransaction.rate = rate
-        outTransaction.comment = "exchange from \(fromAccount.value.currency.rawValue) to \(toAccount.value.currency.rawValue) (1 \(fromAccount.value.currency.rawValue) = \(rate) \(toAccount.value.currency.rawValue))"
+        outTransaction.comment = "exchange from \(fromAccount.currency.rawValue) to \(toAccount.currency.rawValue) (1 \(fromAccount.currency.rawValue) = \(rate) \(toAccount.currency.rawValue))"
         
-        DBManager.sharedInstance.accountRepository.addTransaction(to: fromAccount.value, transaction: outTransaction)
-        DBManager.sharedInstance.accountRepository.addTransaction(to: toAccount.value, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(to: fromAccount, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(to: toAccount, transaction: outTransaction)
     }
 }

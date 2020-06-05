@@ -448,11 +448,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hr0-Zd-3f6">
-                                <rect key="frame" x="10" y="98" width="394" height="725"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Hr0-Zd-3f6">
+                                <rect key="frame" x="10" y="98" width="394" height="705"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cea-Md-K0L">
-                                        <rect key="frame" x="20" y="0.0" width="354" height="39.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cea-Md-K0L">
+                                        <rect key="frame" x="20" y="0.0" width="354" height="54"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-Df-5f9">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="19"/>
@@ -468,15 +468,22 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsJ-36-gNM">
-                                                <rect key="frame" x="0.0" y="19" width="354" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="26" width="354" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vp3-dn-2PV">
+                                                <rect key="frame" x="0.0" y="53.5" width="354" height="0.5"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="PM8-Xe-yyz"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Fqz-vD-A0X">
-                                        <rect key="frame" x="20" y="39.5" width="354" height="419.5"/>
+                                        <rect key="frame" x="20" y="60" width="354" height="433"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tKU-Tc-6jZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -490,7 +497,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyQ-vY-VDc">
                                                         <rect key="frame" x="269" y="0.0" width="35" height="20.5"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                                        <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGe-o3-vbL">
@@ -518,13 +525,15 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount buying" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AK2-wz-Hyj">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buying" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AK2-wz-Hyj">
                                                 <rect key="frame" x="0.0" y="67" width="354" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="HjC-zL-QL8"/>
                                                 </constraints>
+                                                <color key="textColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                                 <connections>
                                                     <action selector="amountChanged:" destination="cFs-gd-zYz" eventType="editingChanged" id="ZHP-oV-GZe"/>
                                                 </connections>
@@ -545,18 +554,36 @@
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exchanged value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vx9-Tc-AIj">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AkF-Hf-Niv">
                                                         <rect key="frame" x="0.0" y="19" width="354" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="exchanged value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vx9-Tc-AIj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exchanged currency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-IO-Vbp">
+                                                                <rect key="frame" x="198" y="0.0" width="156" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtL-lA-mXq">
+                                                <rect key="frame" x="0.0" y="432.5" width="354" height="0.5"/>
+                                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="0.5" id="mwC-aB-Ao6"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tjr-ZH-CjO">
-                                        <rect key="frame" x="20" y="468.5" width="354" height="20.5"/>
+                                        <rect key="frame" x="20" y="504.5" width="354" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cash Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-5L-kM9">
                                                 <rect key="frame" x="0.0" y="0.0" width="283" height="20.5"/>
@@ -567,15 +594,15 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWB-DV-HWq">
                                                 <rect key="frame" x="293" y="0.0" width="61" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTj-Es-034">
-                                        <rect key="frame" x="75.5" y="655" width="243" height="70"/>
+                                        <rect key="frame" x="75.5" y="625" width="243" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="1Pc-sF-Ofz"/>
+                                            <constraint firstAttribute="height" constant="80" id="dLP-8l-6Nm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
                                         <state key="normal" title="Exchange" backgroundImage="comfirm">
@@ -590,6 +617,7 @@
                                     <constraint firstItem="cea-Md-K0L" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="09v-UB-VpB"/>
                                     <constraint firstItem="Tjr-ZH-CjO" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="HZ7-LT-DNq"/>
                                     <constraint firstItem="Fqz-vD-A0X" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="RmD-CS-6aW"/>
+                                    <constraint firstItem="oTj-Es-034" firstAttribute="top" secondItem="Tjr-ZH-CjO" secondAttribute="bottom" constant="100" id="kWz-5b-QfX"/>
                                     <constraint firstAttribute="trailing" secondItem="cea-Md-K0L" secondAttribute="trailing" constant="20" id="qDW-Lc-DvB"/>
                                     <constraint firstAttribute="trailing" secondItem="Fqz-vD-A0X" secondAttribute="trailing" constant="20" id="rI7-aB-EQ3"/>
                                     <constraint firstAttribute="trailing" secondItem="Tjr-ZH-CjO" secondAttribute="trailing" constant="20" id="siV-QI-Lw4"/>
@@ -599,9 +627,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Hr0-Zd-3f6" firstAttribute="top" secondItem="I9F-L1-zZx" secondAttribute="top" constant="10" id="3OI-Ot-4fz"/>
-                            <constraint firstItem="Hr0-Zd-3f6" firstAttribute="bottom" secondItem="I9F-L1-zZx" secondAttribute="bottom" constant="10" id="SbY-Ks-iW7"/>
                             <constraint firstItem="Hr0-Zd-3f6" firstAttribute="leading" secondItem="I9F-L1-zZx" secondAttribute="leading" constant="10" id="nfU-tX-LA3"/>
                             <constraint firstItem="I9F-L1-zZx" firstAttribute="trailing" secondItem="Hr0-Zd-3f6" secondAttribute="trailing" constant="10" id="nyT-wj-uNW"/>
+                            <constraint firstItem="I9F-L1-zZx" firstAttribute="bottom" secondItem="Hr0-Zd-3f6" secondAttribute="bottom" constant="10" id="ruy-UI-PrJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I9F-L1-zZx"/>
                     </view>
@@ -612,56 +640,24 @@
                         <outlet property="cashBalanceTxt" destination="TWB-DV-HWq" id="EFx-2J-prr"/>
                         <outlet property="currencyBuyingTxt" destination="vsJ-36-gNM" id="2Tl-h8-MG6"/>
                         <outlet property="exchangeRateTxt" destination="jyQ-vY-VDc" id="azh-ex-mOM"/>
-                        <outlet property="exchangedValueTxt" destination="vx9-Tc-AIj" id="iHs-KX-MSz"/>
+                        <outlet property="exchangedValueLbl" destination="vx9-Tc-AIj" id="iHs-KX-MSz"/>
                         <outlet property="quoteCurrencyLbl" destination="IGe-o3-vbL" id="lJD-gA-v3V"/>
                         <outlet property="rateUpdatingTimeTxt" destination="FJf-Cd-Sa9" id="Oj5-nd-KOT"/>
+                        <outlet property="toCurrencyLbl" destination="eNZ-IO-Vbp" id="yHW-S9-aQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNb-Iw-Jvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2453.6231884057975" y="200.89285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Transfer-->
         <scene sceneID="fkq-7i-oaZ">
             <objects>
-                <viewController id="60n-0K-U4t" sceneMemberID="viewController">
+                <viewController title="Transfer" id="60n-0K-U4t" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1oz-MH-6q0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select currency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5y-R5-AT5">
-                                <rect key="frame" x="15" y="134" width="125" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To account:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rx6-TB-g1u">
-                                <rect key="frame" x="20" y="308" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XlU-fV-ofe">
-                                <rect key="frame" x="58" y="346" width="269" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6V-3t-Hh7">
-                                <rect key="frame" x="20" y="438" width="65" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgV-NR-gxw">
-                                <rect key="frame" x="58" y="467" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOG-6d-Tgf">
                                 <rect key="frame" x="86" y="684" width="243" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -670,33 +666,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-UL-IXo">
-                                <rect key="frame" x="19" y="159" width="115" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ETH" backgroundImage="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-aX-ibr">
-                                <rect key="frame" x="156" y="159" width="115" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Bitcoin" backgroundImage="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-gY-q9e">
-                                <rect key="frame" x="299" y="159" width="115" height="104"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="XRP" backgroundImage="Button"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transfer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJY-BA-Xwt">
-                                <rect key="frame" x="15" y="99" width="114" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gQk-X4-NoL"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ulK-Ga-8Zo"/>
+                    <navigationItem key="navigationItem" title="Transfer" id="ulK-Ga-8Zo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwR-Fy-YdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -730,6 +704,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gut-Jd-6jB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -741,6 +716,7 @@
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="Button" width="115" height="104"/>
         <image name="comfirm" width="243" height="80"/>

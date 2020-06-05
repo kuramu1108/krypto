@@ -15,8 +15,9 @@ class HomeViewModel {
     public let accounts: Observable<Results<Account>>
     public let loading: PublishSubject<Bool> = PublishSubject()
     public let rateUpdater: PublishSubject<Rate> = PublishSubject()
-    public var currentAccount: PublishSubject<Account> = PublishSubject()
+    public var sourceAccount: PublishSubject<Account> = PublishSubject()
 //    public let btcRates: PublishSubject<Rate> = PublishSubject()
+    public let destinationAccount: PublishSubject<Account> = PublishSubject()
     
     private let disposeBag = DisposeBag()
     
@@ -29,14 +30,28 @@ class HomeViewModel {
         return ApiService.getCurrentRate(base: base, quote: quote)
     }
     
-    func requestAccount(currency: Currency) -> Observable<Results<Account>> {
-        return DBManager.sharedInstance.accountRepository.getWith(currency: currency)
+    func requestAccountObservable(currency: Currency) -> Observable<Results<Account>> {
+        return DBManager.sharedInstance.accountRepository.getObservableWith(currency: currency)
     }
     
-    func requestCurrentAccount(currency: Currency) {
-        DBManager.sharedInstance.accountRepository.getWith(currency: currency)
-            .subscribe(onNext: { (results) in
-                self.currentAccount.onNext(results[0])
+    func requestAccount(currency: Currency) -> Account {
+        return DBManager.sharedInstance.accountRepository.getWith(currency: currency)[0]
+    }
+    
+    func requestCurrentAccount(source currencySource: Currency, destination currencyDest: Currency) {
+        DBManager.sharedInstance.accountRepository.getObservableWith(currency: currencySource)
+            .subscribe(onNext: { [unowned self] (results) in
+                self.sourceAccount.onNext(results[0])
+            }, onDisposed: {
+                print("Home disposed")
+            })
+        .disposed(by: disposeBag)
+        
+        DBManager.sharedInstance.accountRepository.getObservableWith(currency: currencyDest)
+            .subscribe(onNext: { [unowned self] (results) in
+                self.destinationAccount.onNext(results[0])
+            }, onDisposed: {
+                print("Home disposed")
             })
         .disposed(by: disposeBag)
     }

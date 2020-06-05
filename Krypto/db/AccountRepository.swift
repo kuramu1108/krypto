@@ -27,7 +27,13 @@ class AccountRepository {
         return Observable.collection(from: realm.objects(Account.self))
     }
     
-    func getWith(currency: Currency) -> Observable<Results<Account>> {
+    func getWith(currency: Currency) -> Results<Account> {
+        let realm = try! Realm()
+        let predicate = NSPredicate(format: "privateCurrency = %@", currency.rawValue)
+        return realm.objects(Account.self).filter(predicate)
+    }
+    
+    func getObservableWith(currency: Currency) -> Observable<Results<Account>> {
         let realm = try! Realm()
         let predicate = NSPredicate(format: "privateCurrency = %@", currency.rawValue)
         return Observable.collection(from: realm.objects(Account.self).filter(predicate))
@@ -37,6 +43,11 @@ class AccountRepository {
         let realm = try! Realm()
         try! realm.write {
             account.transactions.append(transaction)
+            if transaction.fromAccount == account.name {
+                account.balance -= transaction.amount
+            } else {
+                account.balance += transaction.amount
+            }
         }
     }
 }

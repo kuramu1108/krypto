@@ -24,7 +24,15 @@ class HomeViewController: UIViewController {
     }
     
     private func setupBindings() {
-
+//        let cash = Account()
+//        cash.balance = 10000
+//        cash.currency = Currency.USD
+//        cash.name = "Cash account"
+//        
+//        let btc = Account()
+//        btc.balance = 1.2
+//        btc.currency = Currency.BTC
+//        btc.name = "Btc account"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -32,7 +40,9 @@ class HomeViewController: UIViewController {
             guard let destinationVC = segue.destination as? ExchangeViewController else {
                 return
             }
-            
+            let fromAcc = vm.requestAccount(currency: Currency.USD)
+            let toAcc = vm.requestAccount(currency: Currency.BTC)
+            destinationVC.evm = ExchangeViewModel(fromAcc: fromAcc, toAcc: toAcc)
         }
     }
 }
