@@ -31,6 +31,7 @@ class ExchangeViewController: UIViewController {
         
     var timer: Timer?
     var updateTimeRemaining = Constants.RateUpdateInterval
+    var timerSubsciption: Disposable?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,7 @@ class ExchangeViewController: UIViewController {
                 return self.evm.requestRate(base: Currency.BTC, quote: Currency.USD)
         }
         
-        repeatTimer.observeOn(MainScheduler.instance)
+        timerSubsciption = repeatTimer.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] (rate) in
                 print("requested")
                 self.timer?.invalidate()
@@ -78,6 +79,17 @@ class ExchangeViewController: UIViewController {
                 print("request rate completed")
             }, onDisposed:  {
                 print("request disposed")
+            })
+        
+        evm.trading
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] trading in
+                if trading {
+                    SwiftSpinner.show("Making Transaction")
+                } else {
+                    SwiftSpinner.hide()
+                    self.performSegue(withIdentifier: "segueToExchangeComplete", sender: self)
+                }
             })
             .disposed(by: disposeBag)
         
@@ -118,7 +130,7 @@ class ExchangeViewController: UIViewController {
         guard let intendedAmount = Double(amountBuyingTxt.text!) else {
             return
         }
-        guard intendedAmount > evm.fromAccount.balance else {
+        guard intendedAmount <= evm.fromAccount.balance else {
             // add alert
             print("not enough found")
             return
@@ -132,15 +144,12 @@ class ExchangeViewController: UIViewController {
     }
     
     private func updateExchangedValue() {
-        guard let intendedAmount = amountBuyingTxt.text else {
+        guard let intendedAmount = Double(amountBuyingTxt.text!) else {
+            exchangedValueLbl.text = "0"
             return
         }
-        if intendedAmount == "" {
-            exchangedValueLbl.text = "0"
-        } else {
-            let exchangeRate = Double(self.exchangeRateTxt.text!)!
-            exchangedValueLbl.text = "\(Double(intendedAmount)!/exchangeRate)"
-        }
+        let exchangeRate = Double(self.exchangeRateTxt.text!)!
+        exchangedValueLbl.text = "\(intendedAmount/exchangeRate)"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -160,6 +169,8 @@ class ExchangeViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         self.timer?.invalidate()
+        self.timerSubsciption?.dispose()
+        print("timer invalidated")
         super.viewWillDisappear(animated)
     }
 }

@@ -12,7 +12,7 @@ import RxCocoa
 import RealmSwift
 
 class HomeViewModel {
-    public let accounts: Observable<Results<Account>>
+    public let accounts: BehaviorRelay<Results<Account>>
     public let loading: PublishSubject<Bool> = PublishSubject()
     public let rateUpdater: PublishSubject<Rate> = PublishSubject()
     public var sourceAccount: PublishSubject<Account> = PublishSubject()
@@ -22,8 +22,12 @@ class HomeViewModel {
     private let disposeBag = DisposeBag()
     
     init() {
-        accounts = DBManager.sharedInstance.accountRepository.getAll()
-        
+        accounts = BehaviorRelay.init(value: DBManager.sharedInstance.accountRepository.getAll())
+    }
+    
+    func initSampleAccounts() {
+        DBManager.sharedInstance.accountRepository.createSampleData()
+        accounts.accept(DBManager.sharedInstance.accountRepository.getAll())
     }
     
     func requestRate(base: Currency, quote: Currency) -> Observable<Rate> {

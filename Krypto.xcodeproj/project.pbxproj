@@ -15,6 +15,7 @@
 		3268CC652488D8D70070181E /* AccountContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268CC642488D8D70070181E /* AccountContact.swift */; };
 		3268CC672488D96B0070181E /* AccountContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268CC662488D96B0070181E /* AccountContactRepository.swift */; };
 		3268CC692488DA320070181E /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268CC682488DA320070181E /* TransferViewModel.swift */; };
+		3268CC6B248A5FC10070181E /* ExchangeCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3268CC6A248A5FC10070181E /* ExchangeCompleteViewController.swift */; };
 		329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271EF24808DE900AD5DB6 /* AppDelegate.swift */; };
 		329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F124808DE900AD5DB6 /* SceneDelegate.swift */; };
 		329271F424808DE900AD5DB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F324808DE900AD5DB6 /* HomeViewController.swift */; };
@@ -43,6 +44,7 @@
 		3268CC642488D8D70070181E /* AccountContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountContact.swift; sourceTree = "<group>"; };
 		3268CC662488D96B0070181E /* AccountContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountContactRepository.swift; sourceTree = "<group>"; };
 		3268CC682488DA320070181E /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
+		3268CC6A248A5FC10070181E /* ExchangeCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCompleteViewController.swift; sourceTree = "<group>"; };
 		329271EC24808DE900AD5DB6 /* Krypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Krypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		329271EF24808DE900AD5DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329271F124808DE900AD5DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				325D17D12488A0A8000ED681 /* keys.plist */,
 				325D17AB24865466000ED681 /* TransferViewController.swift */,
 				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
+				3268CC6A248A5FC10070181E /* ExchangeCompleteViewController.swift */,
 			);
 			path = Krypto;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				329272092481DC7400AD5DB6 /* Transaction.swift in Sources */,
 				325D17D52488C121000ED681 /* Constants.swift in Sources */,
 				329272142482194F00AD5DB6 /* AccountRepository.swift in Sources */,
+				3268CC6B248A5FC10070181E /* ExchangeCompleteViewController.swift in Sources */,
 				325D17D72488C712000ED681 /* ExchangeViewModel.swift in Sources */,
 				3268CC652488D8D70070181E /* AccountContact.swift in Sources */,
 				3292721B2482430E00AD5DB6 /* Rate.swift in Sources */,

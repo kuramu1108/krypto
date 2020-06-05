@@ -16,7 +16,7 @@ class ExchangeViewModel {
     public var toAccount: Account
     public let refreshCounter: BehaviorSubject<Int> = BehaviorSubject(value: 0)
     public let loading: BehaviorRelay<Bool> = BehaviorRelay(value: true)
-    
+    public let trading: PublishSubject<Bool> = PublishSubject()
     init(fromAcc: Account, toAcc: Account) {
         fromAccount = fromAcc
         toAccount = toAcc
@@ -33,6 +33,7 @@ class ExchangeViewModel {
     }
     
     func exchange(amount: Double, rate: Double) {
+        trading.onNext(true)
         let outTransaction = Transaction()
         outTransaction.uuid = UUID().uuidString
         outTransaction.type = TransactionType.Exchange
@@ -40,9 +41,11 @@ class ExchangeViewModel {
         outTransaction.toAccount = toAccount.name
         outTransaction.amount = amount
         outTransaction.rate = rate
-        outTransaction.comment = "exchange from \(fromAccount.currency.rawValue) to \(toAccount.currency.rawValue) (1 \(fromAccount.currency.rawValue) = \(rate) \(toAccount.currency.rawValue))"
+        outTransaction.comment = "(1 \(toAccount.currency.rawValue) = \(rate) \(fromAccount.currency.rawValue))"
+        outTransaction.currency = Currency.USD
         
         DBManager.sharedInstance.accountRepository.addTransaction(to: fromAccount, transaction: outTransaction)
         DBManager.sharedInstance.accountRepository.addTransaction(to: toAccount, transaction: outTransaction)
+        trading.onNext(false)
     }
 }

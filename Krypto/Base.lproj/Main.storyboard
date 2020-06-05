@@ -583,7 +583,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tjr-ZH-CjO">
-                                        <rect key="frame" x="20" y="504.5" width="354" height="20.5"/>
+                                        <rect key="frame" x="20" y="516" width="354" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cash Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-5L-kM9">
                                                 <rect key="frame" x="0.0" y="0.0" width="283" height="20.5"/>
@@ -617,7 +617,6 @@
                                     <constraint firstItem="cea-Md-K0L" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="09v-UB-VpB"/>
                                     <constraint firstItem="Tjr-ZH-CjO" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="HZ7-LT-DNq"/>
                                     <constraint firstItem="Fqz-vD-A0X" firstAttribute="leading" secondItem="Hr0-Zd-3f6" secondAttribute="leading" constant="20" id="RmD-CS-6aW"/>
-                                    <constraint firstItem="oTj-Es-034" firstAttribute="top" secondItem="Tjr-ZH-CjO" secondAttribute="bottom" constant="100" id="kWz-5b-QfX"/>
                                     <constraint firstAttribute="trailing" secondItem="cea-Md-K0L" secondAttribute="trailing" constant="20" id="qDW-Lc-DvB"/>
                                     <constraint firstAttribute="trailing" secondItem="Fqz-vD-A0X" secondAttribute="trailing" constant="20" id="rI7-aB-EQ3"/>
                                     <constraint firstAttribute="trailing" secondItem="Tjr-ZH-CjO" secondAttribute="trailing" constant="20" id="siV-QI-Lw4"/>
@@ -644,11 +643,45 @@
                         <outlet property="quoteCurrencyLbl" destination="IGe-o3-vbL" id="lJD-gA-v3V"/>
                         <outlet property="rateUpdatingTimeTxt" destination="FJf-Cd-Sa9" id="Oj5-nd-KOT"/>
                         <outlet property="toCurrencyLbl" destination="eNZ-IO-Vbp" id="yHW-S9-aQb"/>
+                        <segue destination="RhC-cK-Jgd" kind="presentation" identifier="segueToExchangeComplete" modalPresentationStyle="fullScreen" id="aXN-70-ksO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNb-Iw-Jvm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2453.6231884057975" y="200.89285714285714"/>
+        </scene>
+        <!--Exchange Complete View Controller-->
+        <scene sceneID="hHJ-D1-t3J">
+            <objects>
+                <viewController id="RhC-cK-Jgd" customClass="ExchangeCompleteViewController" customModule="Krypto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wmb-V1-Uds">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qwc-IC-xD1">
+                                <rect key="frame" x="189" y="527" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="RhC-cK-Jgd" eventType="touchUpInside" id="iCb-Qa-3Es"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PPi-DW-RFV"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="JCx-ah-gco" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="97T-e2-nQ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DLP-zG-g6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JCx-ah-gco" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3273" y="366"/>
         </scene>
         <!--Transfer-->
         <scene sceneID="fkq-7i-oaZ">
