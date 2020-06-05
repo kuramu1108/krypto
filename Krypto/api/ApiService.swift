@@ -15,7 +15,7 @@ class ApiService {
         let url = "https://rest.coinapi.io/v1/exchangerate/\(base.rawValue)/\(quote.rawValue)"
         let path = Bundle.main.path(forResource: "keys", ofType: "plist")!
         let keys = NSDictionary(contentsOfFile: path)!
-        let coinApiKey = keys["coinApiKey"] as? String
+        let coinApiKey = keys["coinApiKeyBackup"] as? String
         let headers: HTTPHeaders = [
             "X-CoinAPI-Key": coinApiKey!
         ]

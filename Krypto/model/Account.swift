@@ -12,10 +12,10 @@ import RealmSwift
 class Account: Object {
     @objc dynamic var uuid = ""
     @objc dynamic var name = ""
-    @objc private dynamic var privateCurrecny = Currency.BTC.rawValue
+    @objc private dynamic var privateCurrency = Currency.BTC.rawValue
     var currency:Currency {
-        get { return Currency(rawValue: privateCurrecny)! }
-        set { privateCurrecny = newValue.rawValue }
+        get { return Currency(rawValue: privateCurrency)! }
+        set { privateCurrency = newValue.rawValue }
     }
     @objc dynamic var balance: Double = 0.0
     let transactions = List<Transaction>()
@@ -31,4 +31,5 @@ enum Currency: String {
     case XRP = "XRP"
     case AUD = "AUD"
     case USD = "USD"
+    case NA = "NA"
 }

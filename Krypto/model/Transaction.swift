@@ -18,10 +18,10 @@ class Transaction: Object {
         set { privateType = newValue.rawValue}
     }
     @objc dynamic var date = Date()
-    @objc dynamic var from: String = ""
-    @objc dynamic var to: String = ""
+    @objc dynamic var fromAccount: String = ""
+    @objc dynamic var toAccount: String = ""
     @objc dynamic var amount = 0.0
-    @objc private dynamic var privateCurrecny = Currency.BTC.rawValue
+    @objc private dynamic var privateCurrecny = Currency.NA.rawValue
     var currency:Currency {
         get { return Currency(rawValue: privateCurrecny)! }
         set { privateCurrecny = newValue.rawValue }
