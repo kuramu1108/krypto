@@ -73,7 +73,7 @@ class HomeViewModel {
         transaction.amount = amount
         transaction.comment = comment
         
-        DBManager.sharedInstance.accountRepository.addTransaction(to: destination, transaction: transaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: destination, transaction: transaction)
         self.loading.onNext(false)
     }
 }

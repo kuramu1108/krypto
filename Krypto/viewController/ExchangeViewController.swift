@@ -42,6 +42,15 @@ class ExchangeViewController: UIViewController {
     }
     
     private func setupBindings() {
+        evm.refreshCounter
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] counter in
+                if counter > 5 {
+                    self.timerSubsciption?.dispose()
+                }
+            })
+            .disposed(by: disposeBag)
+        
         evm.loading
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { (shouldShow) in
@@ -73,6 +82,7 @@ class ExchangeViewController: UIViewController {
                     }
                 }
                 self.evm.finishedLoading()
+                self.evm.refreshIncrement()
             }, onError: { (error) in
                 print("error in request rate: \(error)")
             }, onCompleted: {

@@ -39,7 +39,8 @@ class AccountRepository {
         return Observable.collection(from: realm.objects(Account.self).filter(predicate))
     }
     
-    func addTransaction(to account: Account, transaction: Transaction) {
+    func addTransaction(within account: Account, transaction: Transaction) {
+        transaction.uuid = UUID().uuidString
         let realm = try! Realm()
         try! realm.write {
             account.transactions.append(transaction)
