@@ -50,28 +50,4 @@ class AccountRepository {
             }
         }
     }
-    
-    func createSampleData() {
-        let cash = Account()
-        cash.balance = 10000
-        cash.currency = Currency.USD
-        cash.name = "Cash Account"
-        let btc = Account()
-        btc.balance = 1.2
-        btc.currency = Currency.BTC
-        btc.name = "BTC Account"
-        let eth = Account()
-        eth.balance = 203.2
-        eth.currency = Currency.ETH
-        eth.name = "ETH Account"
-        let xrp = Account()
-        xrp.balance = 502.31
-        xrp.currency = Currency.XRP
-        xrp.name = "XRP Account"
-        
-        createOrUpdate(account: cash)
-        createOrUpdate(account: btc)
-        createOrUpdate(account: eth)
-        createOrUpdate(account: xrp)
-    }
 }

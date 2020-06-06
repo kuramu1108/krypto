@@ -55,7 +55,7 @@ class ExchangeViewController: UIViewController {
         let repeatTimer = Observable<Int>
             .timer(.seconds(0), period: .seconds(Constants.RateUpdateInterval), scheduler: MainScheduler.instance)
             .flatMap { [unowned self] _ in
-                return self.evm.requestRate(base: Currency.BTC, quote: Currency.USD)
+                return self.evm.requestRate(base: self.evm.toAccount.currency, quote: self.evm.fromAccount.currency)
         }
         
         timerSubsciption = repeatTimer.observeOn(MainScheduler.instance)
@@ -155,17 +155,6 @@ class ExchangeViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         amountBuyingTxt.endEditing(true)
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     override func viewWillDisappear(_ animated: Bool) {
         self.timer?.invalidate()
