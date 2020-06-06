@@ -18,6 +18,17 @@ class Account: Object {
         set { privateCurrency = newValue.rawValue }
     }
     @objc dynamic var balance: Double = 0.0
+//    var balance: Double {
+//        var amount = 0.0
+//        transactions.forEach { (transaction) in
+//            var multiplier = 1.0
+//            if transaction.fromAccount == name {
+//                multiplier *= -1
+//            }
+//            amount += transaction.amount * multiplier
+//        }
+//        return amount
+//    }
     let transactions = List<Transaction>()
     
     override static func primaryKey() -> String? {

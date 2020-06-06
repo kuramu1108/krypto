@@ -14,7 +14,7 @@ import RealmSwift
 class ExchangeViewModel {
     public var fromAccount: Account
     public var toAccount: Account
-    public let refreshCounter: BehaviorSubject<Int> = BehaviorSubject(value: 0)
+    public let refreshCounter: BehaviorRelay<Int> = BehaviorRelay(value: 0)
     public let loading: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     public let trading: PublishSubject<Bool> = PublishSubject()
     init(fromAcc: Account, toAcc: Account) {
@@ -32,10 +32,13 @@ class ExchangeViewModel {
         }
     }
     
+    func refreshIncrement() {
+        refreshCounter.accept(refreshCounter.value + 1)
+    }
+    
     func exchange(amount: Double, rate: Double) {
         trading.onNext(true)
         let outTransaction = Transaction()
-        outTransaction.uuid = UUID().uuidString
         outTransaction.type = TransactionType.Exchange
         outTransaction.fromAccount = fromAccount.name
         outTransaction.toAccount = toAccount.name
@@ -44,8 +47,8 @@ class ExchangeViewModel {
         outTransaction.comment = "(1 \(toAccount.currency.rawValue) = \(rate) \(fromAccount.currency.rawValue))"
         outTransaction.currency = Currency.USD
         
-        DBManager.sharedInstance.accountRepository.addTransaction(to: fromAccount, transaction: outTransaction)
-        DBManager.sharedInstance.accountRepository.addTransaction(to: toAccount, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: fromAccount, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: toAccount, transaction: outTransaction)
         trading.onNext(false)
     }
 }

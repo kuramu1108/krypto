@@ -25,8 +25,8 @@ class HomeViewModel {
         accounts = BehaviorRelay.init(value: DBManager.sharedInstance.accountRepository.getAll())
     }
     
-    func initSampleAccounts() {
-        DBManager.sharedInstance.accountRepository.createSampleData()
+    func initSampleData() {
+        DBManager.sharedInstance.initSampleData()
         accounts.accept(DBManager.sharedInstance.accountRepository.getAll())
     }
     
@@ -60,22 +60,6 @@ class HomeViewModel {
         .disposed(by: disposeBag)
     }
     
-    func exchange(from source: Account, to destination: Account, amount: Double, rate: Double) {
-        self.loading.onNext(true)
-        let outTransaction = Transaction()
-        outTransaction.uuid = UUID().uuidString
-        outTransaction.type = TransactionType.Exchange
-        outTransaction.fromAccount = source.name
-        outTransaction.toAccount = destination.name
-        outTransaction.amount = amount
-        outTransaction.rate = rate
-        outTransaction.comment = "exchange from \(source.currency.rawValue) to \(destination.currency.rawValue) (1 \(source.currency.rawValue) = \(rate) \(destination.currency.rawValue))"
-        
-        DBManager.sharedInstance.accountRepository.addTransaction(to: source, transaction: outTransaction)
-        DBManager.sharedInstance.accountRepository.addTransaction(to: destination, transaction: outTransaction)
-        self.loading.onNext(false)
-    }
-    
     func transfer(from source: Account, to destination: String, amount: Double) {
         
     }
@@ -89,7 +73,7 @@ class HomeViewModel {
         transaction.amount = amount
         transaction.comment = comment
         
-        DBManager.sharedInstance.accountRepository.addTransaction(to: destination, transaction: transaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: destination, transaction: transaction)
         self.loading.onNext(false)
     }
 }
