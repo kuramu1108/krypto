@@ -55,7 +55,7 @@ func loadFeatures() {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] results in
                 if results.count == 0 {
-                    self.vm.initSampleAccounts()
+                    self.vm.initSampleData()
                 }
             })
             .disposed(by: disposeBag)

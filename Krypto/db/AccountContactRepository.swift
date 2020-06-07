@@ -13,4 +13,12 @@ class AccountContactRepository {
         let realm = try! Realm()
         return realm.objects(AccountContact.self)
     }
+    
+    func create(contact: AccountContact) {
+        contact.uuid = UUID().uuidString
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(contact)
+        }
+    }
 }

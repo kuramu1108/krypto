@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		324DF749248BD9A300652C94 /* TransferCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF748248BD9A300652C94 /* TransferCompleteViewController.swift */; };
 		325D17AC24865466000ED681 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AB24865466000ED681 /* TransferViewController.swift */; };
 		325D17AE24865B27000ED681 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AD24865B27000ED681 /* ExchangeViewController.swift */; };
 		325D17D52488C121000ED681 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17D42488C121000ED681 /* Constants.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		324DF748248BD9A300652C94 /* TransferCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCompleteViewController.swift; sourceTree = "<group>"; };
 		325D17AB24865466000ED681 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		325D17AD24865B27000ED681 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		325D17D42488C121000ED681 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -92,6 +94,27 @@
 			path = config;
 			sourceTree = "<group>";
 		};
+		3268CC6C248B6F130070181E /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				329271F524808DE900AD5DB6 /* SecondViewController.swift */,
+				325D17AB24865466000ED681 /* TransferViewController.swift */,
+				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
+				3268CC6A248A5FC10070181E /* ExchangeCompleteViewController.swift */,
+				324DF748248BD9A300652C94 /* TransferCompleteViewController.swift */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		3268CC6D248B6F340070181E /* template */ = {
+			isa = PBXGroup;
+			children = (
+				329271EF24808DE900AD5DB6 /* AppDelegate.swift */,
+				329271F124808DE900AD5DB6 /* SceneDelegate.swift */,
+			);
+			path = template;
+			sourceTree = "<group>";
+		};
 		329271E324808DE900AD5DB6 = {
 			isa = PBXGroup;
 			children = (
@@ -113,13 +136,13 @@
 		329271EE24808DE900AD5DB6 /* Krypto */ = {
 			isa = PBXGroup;
 			children = (
+				3268CC6D248B6F340070181E /* template */,
+				3268CC6C248B6F130070181E /* viewController */,
+				3292720D2482101100AD5DB6 /* viewModel */,
 				325D17D32488C10A000ED681 /* config */,
 				32927217248235CB00AD5DB6 /* api */,
 				32927210248218E600AD5DB6 /* db */,
-				3292720D2482101100AD5DB6 /* viewModel */,
 				329272052481D96A00AD5DB6 /* model */,
-				329271EF24808DE900AD5DB6 /* AppDelegate.swift */,
-				329271F124808DE900AD5DB6 /* SceneDelegate.swift */,
 				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 				67CCFD84248B4E5B00519455 /* Feature.xib */,
 				67CCFD82248B4E1C00519455 /* FeatureView.swift */,
@@ -128,10 +151,7 @@
 				329271FA24808DED00AD5DB6 /* Assets.xcassets */,
 				329271FC24808DED00AD5DB6 /* LaunchScreen.storyboard */,
 				329271FF24808DED00AD5DB6 /* Info.plist */,
-				67CCFD86248B62B900519455 /* keys.plist */,
-				325D17AB24865466000ED681 /* TransferViewController.swift */,
-				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
-				3268CC6A248A5FC10070181E /* ExchangeCompleteViewController.swift */,
+				325D17D12488A0A8000ED681 /* keys.plist */,
 			);
 			path = Krypto;
 			sourceTree = "<group>";
@@ -322,6 +342,7 @@
 				325D17D52488C121000ED681 /* Constants.swift in Sources */,
 				329272142482194F00AD5DB6 /* AccountRepository.swift in Sources */,
 				3268CC6B248A5FC10070181E /* ExchangeCompleteViewController.swift in Sources */,
+				324DF749248BD9A300652C94 /* TransferCompleteViewController.swift in Sources */,
 				325D17D72488C712000ED681 /* ExchangeViewModel.swift in Sources */,
 				3268CC652488D8D70070181E /* AccountContact.swift in Sources */,
 				3292721B2482430E00AD5DB6 /* Rate.swift in Sources */,

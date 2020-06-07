@@ -1,14 +1,14 @@
 //
-//  TransferViewController.swift
+//  TransferCompleteViewController.swift
 //  Krypto
 //
-//  Created by Po-Hao Chen on 2020/6/2.
+//  Created by Po-Hao Chen on 2020/6/7.
 //  Copyright © 2020 Po-Hao Chen. All rights reserved.
 //
 
 import UIKit
 
-class TransferViewController: UIViewController {
+class TransferCompleteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,5 +26,8 @@ class TransferViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func done(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToHome", sender: self)
+    }
 }

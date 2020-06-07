@@ -14,16 +14,22 @@ import RealmSwift
 class ExchangeViewModel {
     public var fromAccount: Account
     public var toAccount: Account
-    public let refreshCounter: BehaviorSubject<Int> = BehaviorSubject(value: 0)
+    public var baseCurrency: Currency
+    public var quoteCurrency: Currency
+    public let refreshCounter: BehaviorRelay<Int> = BehaviorRelay(value: 0)
     public let loading: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     public let trading: PublishSubject<Bool> = PublishSubject()
+    public let isBuying: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    
     init(fromAcc: Account, toAcc: Account) {
         fromAccount = fromAcc
         toAccount = toAcc
+        baseCurrency = toAcc.currency
+        quoteCurrency = fromAcc.currency
     }
     
-    func requestRate(base: Currency, quote: Currency) -> Observable<Rate> {
-        return ApiService.getCurrentRate(base: base, quote: quote)
+    func requestRate() -> Observable<Rate> {
+        return ApiService.getCurrentRate(base: baseCurrency, quote: quoteCurrency)
     }
     
     func finishedLoading() {
@@ -32,20 +38,35 @@ class ExchangeViewModel {
         }
     }
     
-    func exchange(amount: Double, rate: Double) {
+    func refreshIncrement() {
+        refreshCounter.accept(refreshCounter.value + 1)
+    }
+    
+    func swapTradingMode() {
+        let tempAcc = fromAccount
+        fromAccount = toAccount
+        toAccount = tempAcc
+        isBuying.accept(!isBuying.value)
+    }
+    
+    func exchange(amount: Double, equivalentAmount: Double ,rate: Double) {
         trading.onNext(true)
-        let outTransaction = Transaction()
-        outTransaction.uuid = UUID().uuidString
-        outTransaction.type = TransactionType.Exchange
-        outTransaction.fromAccount = fromAccount.name
-        outTransaction.toAccount = toAccount.name
-        outTransaction.amount = amount
-        outTransaction.rate = rate
-        outTransaction.comment = "(1 \(toAccount.currency.rawValue) = \(rate) \(fromAccount.currency.rawValue))"
-        outTransaction.currency = Currency.USD
+        let transaction = Transaction()
+        if isBuying.value {
+            transaction.type = TransactionType.Buy
+        } else {
+            transaction.type = TransactionType.Sell
+        }
+        transaction.fromAccount = fromAccount.name
+        transaction.toAccount = toAccount.name
+        transaction.outAmount = amount
+        transaction.inAmount = equivalentAmount
+        transaction.rate = rate
+        transaction.comment = "(1 \(baseCurrency.rawValue) = \(rate) \(quoteCurrency.rawValue))"
+        transaction.currency = Currency.USD
         
-        DBManager.sharedInstance.accountRepository.addTransaction(to: fromAccount, transaction: outTransaction)
-        DBManager.sharedInstance.accountRepository.addTransaction(to: toAccount, transaction: outTransaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: fromAccount, transaction: transaction)
+        DBManager.sharedInstance.accountRepository.addTransaction(within: toAccount, transaction: transaction)
         trading.onNext(false)
     }
 }

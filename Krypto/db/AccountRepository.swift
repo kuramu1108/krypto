@@ -39,39 +39,20 @@ class AccountRepository {
         return Observable.collection(from: realm.objects(Account.self).filter(predicate))
     }
     
-    func addTransaction(to account: Account, transaction: Transaction) {
+    func addTransaction(within account: Account, transaction: Transaction) {
+        if transaction.uuid == "" {
+            transaction.uuid = UUID().uuidString
+        }
         let realm = try! Realm()
         try! realm.write {
             account.transactions.append(transaction)
             if transaction.fromAccount == account.name {
-                account.balance -= transaction.amount
+                // outgoing transaction
+                account.balance -= transaction.outAmount
             } else {
-                account.balance += transaction.amount
+                // incoming transaction
+                account.balance += transaction.inAmount
             }
         }
-    }
-    
-    func createSampleData() {
-        let cash = Account()
-        cash.balance = 10000
-        cash.currency = Currency.USD
-        cash.name = "Cash Account"
-        let btc = Account()
-        btc.balance = 1.2
-        btc.currency = Currency.BTC
-        btc.name = "BTC Account"
-        let eth = Account()
-        eth.balance = 203.2
-        eth.currency = Currency.ETH
-        eth.name = "ETH Account"
-        let xrp = Account()
-        xrp.balance = 502.31
-        xrp.currency = Currency.XRP
-        xrp.name = "XRP Account"
-        
-        createOrUpdate(account: cash)
-        createOrUpdate(account: btc)
-        createOrUpdate(account: eth)
-        createOrUpdate(account: xrp)
     }
 }

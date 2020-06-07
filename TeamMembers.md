@@ -16,7 +16,4 @@ Student ID: 13488554
 Email: 13488554@student.uts.edu.au
 
 
-Member 4:
-Student ID:
-Email:
-
+Note : for local deployment, please check README.md
