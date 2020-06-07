@@ -20,6 +20,7 @@ class ExchangeViewModel {
     public let loading: BehaviorRelay<Bool> = BehaviorRelay(value: true)
     public let trading: PublishSubject<Bool> = PublishSubject()
     public let isBuying: BehaviorRelay<Bool> = BehaviorRelay(value: true)
+    var transaction: Transaction = Transaction()
     
     init(fromAcc: Account, toAcc: Account) {
         fromAccount = fromAcc
@@ -51,7 +52,6 @@ class ExchangeViewModel {
     
     func exchange(amount: Double, equivalentAmount: Double ,rate: Double) {
         trading.onNext(true)
-        let transaction = Transaction()
         if isBuying.value {
             transaction.type = TransactionType.Buy
         } else {
@@ -63,7 +63,8 @@ class ExchangeViewModel {
         transaction.inAmount = equivalentAmount
         transaction.rate = rate
         transaction.comment = "(1 \(baseCurrency.rawValue) = \(rate) \(quoteCurrency.rawValue))"
-        transaction.currency = Currency.USD
+        transaction.outCurrency = fromAccount.currency
+        transaction.inCurrency = toAccount.currency
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: fromAccount, transaction: transaction)
         DBManager.sharedInstance.accountRepository.addTransaction(within: toAccount, transaction: transaction)

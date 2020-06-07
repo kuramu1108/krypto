@@ -16,6 +16,7 @@ class TransferViewModel {
     var selectedAccount: BehaviorRelay<Account> = BehaviorRelay(value: Account())
     var selectedAccountContact: AccountContact?
     let trading: PublishSubject<Bool> = PublishSubject()
+    var transaction = Transaction()
     
     init() {
         accounts = Array(DBManager.sharedInstance.accountRepository.getAll())
@@ -25,11 +26,11 @@ class TransferViewModel {
     
     func transfer(_ amount: Double) {
         trading.onNext(true)
-        let transaction = Transaction()
         transaction.type = TransactionType.Transfer
         transaction.toAccount = selectedAccountContact!.ownerName
         transaction.fromAccount = selectedAccount.value.name
         transaction.outAmount = amount
+        transaction.outCurrency = selectedAccount.value.currency
         transaction.comment = "Sending to \(selectedAccountContact!.ownerName)"
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: selectedAccount.value, transaction: transaction)

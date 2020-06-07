@@ -1,5 +1,5 @@
 //
-//  ExchangeCompleteViewController.swift
+//  ReceiptViewController.swift
 //  Krypto
 //
 //  Created by Po-Hao Chen on 2020/6/5.
@@ -39,26 +39,27 @@ class ReceiptViewController: UIViewController {
             amount1Lbl.text = "Amount"
             amount1Value.text = String(transaction.inAmount)
             amount2Stack.isHidden = true
-            return
         case TransactionType.Transfer:
             amount1Lbl.text = "Amount"
             amount1Value.text = String(transaction.outAmount)
             amount2Stack.isHidden = true
-            return
         case TransactionType.Buy:
             amount1Lbl.text = "Buying"
-            amount1Value.text = "\(transaction.inAmount) \(transaction.inCurrency.rawValue)"
+            amount1Value.text = "\(String(format: "%.3f", transaction.inAmount)) \(transaction.inCurrency.rawValue)"
             amount2Lbl.text = "With"
             amount2Value.text = "$ \(transaction.outAmount)"
-            return
         case TransactionType.Sell:
-            return
+            amount1Lbl.text = "Selling"
+            amount1Value.text = "\(String(format: "%.3f", transaction.outAmount)) \(transaction.outCurrency.rawValue)"
+            amount2Lbl.text = "For"
+            amount2Value.text = "$ \(transaction.inAmount)"
         }
         
         fromLbl.text = transaction.fromAccount
         toLbl.text = transaction.toAccount
         let df = DateFormatter()
-        df.dateFormat = "dd MM yyyy hh:mm"
+        df.locale = Locale.init(identifier: "en_AU")
+        df.dateFormat = "d MMM yyyy HH:mm"
         dateLbl.text = df.string(from: transaction.date)
     }
 

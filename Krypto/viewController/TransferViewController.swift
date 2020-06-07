@@ -73,6 +73,13 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             .addObserver(self, selector: #selector(TransferViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? ReceiptViewController else {
+            return
+        }
+        destVC.transaction = vm.transaction
+    }
+    
     // MARK: - Button
     @IBAction func transfer(_ sender: Any) {
         print("transfer fire")
