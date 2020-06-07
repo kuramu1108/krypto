@@ -1,4 +1,12 @@
-UTS 
+## Deployment
+the API key to get crypto currency rate is not included in the repo, anyone who intend to deploy at local need to obtain their own API key at
+
+https://www.coinapi.io/
+
+and reference is as `coinApiKey: <your key>` within keys.plist
+
+
+## UTS 
 41889 Application Development in the iOS Environment
 42889 iOS Application Development
 Autumn 2020
