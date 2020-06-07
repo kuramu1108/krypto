@@ -3,7 +3,7 @@ the API key to get crypto currency rate is not included in the repo, anyone who 
 
 https://www.coinapi.io/
 
-and reference is as `coinApiKey: <your key>` within keys.plist
+and reference it as `coinApiKey: <your key>` within keys.plist
 
 
 ## UTS 
