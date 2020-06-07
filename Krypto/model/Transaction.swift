@@ -20,7 +20,8 @@ class Transaction: Object {
     @objc dynamic var date = Date()
     @objc dynamic var fromAccount: String = ""
     @objc dynamic var toAccount: String = ""
-    @objc dynamic var amount = 0.0
+    @objc dynamic var outAmount = 0.0
+    @objc dynamic var inAmount = 0.0
     @objc private dynamic var privateCurrecny = Currency.NA.rawValue
     var currency:Currency {
         get { return Currency(rawValue: privateCurrecny)! }
@@ -36,6 +37,7 @@ class Transaction: Object {
 
 enum TransactionType: Int {
     case Transfer = 1
-    case Exchange = 2
-    case Deposit = 3
+    case Buy = 2
+    case Sell = 3
+    case Deposit = 4
 }

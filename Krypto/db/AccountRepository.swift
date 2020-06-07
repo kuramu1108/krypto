@@ -40,14 +40,18 @@ class AccountRepository {
     }
     
     func addTransaction(within account: Account, transaction: Transaction) {
-        transaction.uuid = UUID().uuidString
+        if transaction.uuid == "" {
+            transaction.uuid = UUID().uuidString
+        }
         let realm = try! Realm()
         try! realm.write {
             account.transactions.append(transaction)
             if transaction.fromAccount == account.name {
-                account.balance -= transaction.amount
+                // outgoing transaction
+                account.balance -= transaction.outAmount
             } else {
-                account.balance += transaction.amount
+                // incoming transaction
+                account.balance += transaction.inAmount
             }
         }
     }

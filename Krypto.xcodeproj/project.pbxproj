@@ -134,10 +134,10 @@
 			children = (
 				3268CC6D248B6F340070181E /* template */,
 				3268CC6C248B6F130070181E /* viewController */,
+				3292720D2482101100AD5DB6 /* viewModel */,
 				325D17D32488C10A000ED681 /* config */,
 				32927217248235CB00AD5DB6 /* api */,
 				32927210248218E600AD5DB6 /* db */,
-				3292720D2482101100AD5DB6 /* viewModel */,
 				329272052481D96A00AD5DB6 /* model */,
 				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 				329271F724808DEA00AD5DB6 /* Main.storyboard */,

@@ -452,29 +452,41 @@
                                 <rect key="frame" x="10" y="98" width="394" height="705"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cea-Md-K0L">
-                                        <rect key="frame" x="20" y="0.0" width="354" height="54"/>
+                                        <rect key="frame" x="20" y="0.0" width="354" height="85"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-Df-5f9">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="19"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Buying">
-                                                        <attributes>
-                                                            <color key="NSColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="17" name="Arial-BoldMT"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xmk-kf-mE6">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buying" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWc-Df-5f9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
+                                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxe-pE-IeF">
+                                                        <rect key="frame" x="81.5" y="0.0" width="69.5" height="50"/>
+                                                        <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title=" swap" image="repeat" catalog="system">
+                                                            <color key="titleColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="swapTrading:" destination="cFs-gd-zYz" eventType="touchUpInside" id="vvZ-Ah-9qb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-aA-gW6">
+                                                        <rect key="frame" x="161" y="0.0" width="193" height="50"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsJ-36-gNM">
-                                                <rect key="frame" x="0.0" y="26" width="354" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="57" width="354" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vp3-dn-2PV">
-                                                <rect key="frame" x="0.0" y="53.5" width="354" height="0.5"/>
+                                                <rect key="frame" x="0.0" y="84.5" width="354" height="0.5"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="0.5" id="PM8-Xe-yyz"/>
@@ -483,7 +495,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Fqz-vD-A0X">
-                                        <rect key="frame" x="20" y="60" width="354" height="433"/>
+                                        <rect key="frame" x="20" y="91" width="354" height="433"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tKU-Tc-6jZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
@@ -583,7 +595,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tjr-ZH-CjO">
-                                        <rect key="frame" x="20" y="516" width="354" height="20.5"/>
+                                        <rect key="frame" x="20" y="562.5" width="354" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cash Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-5L-kM9">
                                                 <rect key="frame" x="0.0" y="0.0" width="283" height="20.5"/>
@@ -636,13 +648,15 @@
                     <connections>
                         <outlet property="amountBuyingTxt" destination="AK2-wz-Hyj" id="RII-qD-taU"/>
                         <outlet property="baseCurrencyLbl" destination="ssh-rm-9c1" id="SzI-gL-yqc"/>
-                        <outlet property="cashBalanceTxt" destination="TWB-DV-HWq" id="EFx-2J-prr"/>
-                        <outlet property="currencyBuyingTxt" destination="vsJ-36-gNM" id="2Tl-h8-MG6"/>
+                        <outlet property="currencyTradingTxt" destination="vsJ-36-gNM" id="2Tl-h8-MG6"/>
                         <outlet property="exchangeRateTxt" destination="jyQ-vY-VDc" id="azh-ex-mOM"/>
+                        <outlet property="exchangedValueCurrencyLbl" destination="eNZ-IO-Vbp" id="yHW-S9-aQb"/>
                         <outlet property="exchangedValueLbl" destination="vx9-Tc-AIj" id="iHs-KX-MSz"/>
+                        <outlet property="fromAccountBalanceLbl" destination="TWB-DV-HWq" id="EFx-2J-prr"/>
+                        <outlet property="fromAccountNameLbl" destination="Jun-5L-kM9" id="gfS-se-8U1"/>
                         <outlet property="quoteCurrencyLbl" destination="IGe-o3-vbL" id="lJD-gA-v3V"/>
                         <outlet property="rateUpdatingTimeTxt" destination="FJf-Cd-Sa9" id="Oj5-nd-KOT"/>
-                        <outlet property="toCurrencyLbl" destination="eNZ-IO-Vbp" id="yHW-S9-aQb"/>
+                        <outlet property="tradingModeLbl" destination="DWc-Df-5f9" id="nZf-W0-58Z"/>
                         <segue destination="RhC-cK-Jgd" kind="presentation" identifier="segueToExchangeComplete" modalPresentationStyle="fullScreen" id="aXN-70-ksO"/>
                     </connections>
                 </viewController>
@@ -911,6 +925,7 @@
         <image name="comfirm" width="243" height="80"/>
         <image name="creditcard" catalog="system" width="128" height="91"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="repeat" catalog="system" width="128" height="99"/>
         <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
     </resources>
 </document>

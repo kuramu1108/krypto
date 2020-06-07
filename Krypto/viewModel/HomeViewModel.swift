@@ -70,7 +70,7 @@ class HomeViewModel {
         transaction.uuid = UUID().uuidString
         transaction.type = TransactionType.Deposit
         transaction.toAccount = destination.name
-        transaction.amount = amount
+        transaction.inAmount = amount
         transaction.comment = comment
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: destination, transaction: transaction)

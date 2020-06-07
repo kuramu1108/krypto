@@ -29,7 +29,7 @@ class TransferViewModel {
         transaction.type = TransactionType.Transfer
         transaction.toAccount = selectedAccountContact!.ownerName
         transaction.fromAccount = selectedAccount.value.name
-        transaction.amount = amount
+        transaction.outAmount = amount
         transaction.comment = "Sending to \(selectedAccountContact!.ownerName)"
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: selectedAccount.value, transaction: transaction)
