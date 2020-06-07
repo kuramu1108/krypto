@@ -12,7 +12,7 @@ import RealmSwift
 // use let uuid = UUID().uuidString to generate id
 class Transaction: Object {
     @objc dynamic var uuid = ""
-    @objc private dynamic var privateType: Int = TransactionType.Transfer.rawValue
+    @objc private dynamic var privateType: String = TransactionType.Transfer.rawValue
     var type: TransactionType {
         get { return TransactionType(rawValue: privateType)! }
         set { privateType = newValue.rawValue}
@@ -22,10 +22,15 @@ class Transaction: Object {
     @objc dynamic var toAccount: String = ""
     @objc dynamic var outAmount = 0.0
     @objc dynamic var inAmount = 0.0
-    @objc private dynamic var privateCurrecny = Currency.NA.rawValue
-    var currency:Currency {
-        get { return Currency(rawValue: privateCurrecny)! }
-        set { privateCurrecny = newValue.rawValue }
+    @objc private dynamic var privateOutCurrecny = Currency.NA.rawValue
+    var outCurrency:Currency {
+        get { return Currency(rawValue: privateOutCurrecny)! }
+        set { privateOutCurrecny = newValue.rawValue }
+    }
+    @objc private dynamic var privateInCurrency = Currency.NA.rawValue
+    var inCurrency: Currency {
+        get {return Currency(rawValue: privateInCurrency)! }
+        set { privateInCurrency = newValue.rawValue }
     }
     @objc dynamic var rate: Double = 1.0
     @objc dynamic var comment: String = ""
@@ -35,9 +40,9 @@ class Transaction: Object {
     }
 }
 
-enum TransactionType: Int {
-    case Transfer = 1
-    case Buy = 2
-    case Sell = 3
-    case Deposit = 4
+enum TransactionType: String {
+    case Transfer = "Transfer"
+    case Buy = "Buy"
+    case Sell = "Sell"
+    case Deposit = "Deposit"
 }
