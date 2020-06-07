@@ -48,6 +48,7 @@ class DBManager {
         transaction1.toAccount = cash.name
         transaction1.inAmount = 10000
         transaction1.comment = "init deopsit"
+        transaction1.inCurrency = Currency.USD
         accountRepository.addTransaction(within: cash, transaction: transaction1)
         
         let transaction2 = Transaction()
@@ -55,6 +56,7 @@ class DBManager {
         transaction2.toAccount = btc.name
         transaction2.inAmount = 1.234
         transaction2.comment = "init deopsit"
+        transaction2.inCurrency = Currency.BTC
         accountRepository.addTransaction(within: btc, transaction: transaction2)
         
         let transaction3 = Transaction()
@@ -62,6 +64,7 @@ class DBManager {
         transaction3.toAccount = eth.name
         transaction3.inAmount = 145
         transaction3.comment = "init deopsit"
+        transaction3.inCurrency = Currency.ETH
         accountRepository.addTransaction(within: eth, transaction: transaction3)
         
         let transaction4 = Transaction()
@@ -69,6 +72,7 @@ class DBManager {
         transaction4.toAccount = xrp.name
         transaction4.inAmount = 754
         transaction4.comment = "init deopsit"
+        transaction4.inCurrency = Currency.XRP
         accountRepository.addTransaction(within: xrp, transaction: transaction4)
         
         let contacts = ["Bill", "Michael", "Chris", "Ray", "Darren", "Rosewater", "Jimmy", "Josh", "Lili", "Shan"]

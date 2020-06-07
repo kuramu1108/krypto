@@ -159,6 +159,13 @@ class ExchangeViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? ReceiptViewController else {
+            return
+        }
+        destinationVC.transaction = evm.transaction
+    }
+    
     // MARK: - UIActions
     @IBAction func exchangePressed(_ sender: Any) {
         guard let intendedAmount = Double(amountBuyingTxt.text!) else {
