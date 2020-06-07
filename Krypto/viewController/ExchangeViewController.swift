@@ -16,14 +16,17 @@ class ExchangeViewController: UIViewController {
     var evm: ExchangeViewModel!
     let disposeBag = DisposeBag()
 
-    @IBOutlet weak var currencyBuyingTxt: UILabel!
+    @IBOutlet weak var tradingModeLbl: UILabel!
+    
+    @IBOutlet weak var currencyTradingTxt: UILabel!
     @IBOutlet weak var amountBuyingTxt: UITextField!
     @IBOutlet weak var rateUpdatingTimeTxt: UILabel!
     
     @IBOutlet weak var exchangedValueLbl: UILabel!
-    @IBOutlet weak var toCurrencyLbl: UILabel!
+    @IBOutlet weak var exchangedValueCurrencyLbl: UILabel!
     
-    @IBOutlet weak var cashBalanceTxt: UILabel!
+    @IBOutlet weak var fromAccountNameLbl: UILabel!
+    @IBOutlet weak var fromAccountBalanceLbl: UILabel!
     
     @IBOutlet weak var baseCurrencyLbl: UILabel!
     @IBOutlet weak var exchangeRateTxt: UILabel!
@@ -61,12 +64,34 @@ class ExchangeViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        evm.isBuying
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] isBuying in
+                if isBuying {
+                    self.tradingModeLbl.text = "Buying"
+                    self.tradingModeLbl.textColor = UIColor.systemBlue
+                    self.amountBuyingTxt.backgroundColor = UIColor.systemBlue
+                } else {
+                    self.tradingModeLbl.text = "Selling"
+                    self.tradingModeLbl.textColor = UIColor.systemRed
+                    self.amountBuyingTxt.backgroundColor = UIColor.systemRed
+                }
+                self.amountBuyingTxt.placeholder = self.tradingModeLbl.text
+                self.fromAccountNameLbl.text = self.evm.fromAccount.name
+                self.fromAccountBalanceLbl.text = "$\(String(self.evm.fromAccount.balance)) \(self.evm.fromAccount.currency.rawValue)"
+                self.exchangedValueCurrencyLbl.text = self.evm.toAccount.currency.rawValue
+                self.amountBuyingTxt.text = ""
+                self.updateExchangedValue()
+            })
+            .disposed(by: disposeBag)
+        
         let repeatTimer = Observable<Int>
             .timer(.seconds(0), period: .seconds(Constants.RateUpdateInterval), scheduler: MainScheduler.instance)
             .flatMap { [unowned self] _ in
-                return self.evm.requestRate(base: self.evm.toAccount.currency, quote: self.evm.fromAccount.currency)
+                return self.evm.requestRate()
         }
-        
+    
         timerSubsciption = repeatTimer.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [unowned self] (rate) in
                 print("requested")
@@ -103,12 +128,10 @@ class ExchangeViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        // exchange view model implementation
-        cashBalanceTxt.text = "$\(String(evm.fromAccount.balance)) \(evm.fromAccount.currency.rawValue)"
-        baseCurrencyLbl.text = "1 \(evm.toAccount.currency.rawValue ) ="
-        
-        currencyBuyingTxt.text = evm.toAccount.currency.rawValue
-        toCurrencyLbl.text = evm.toAccount.currency.rawValue
+        // static views
+        baseCurrencyLbl.text = "1 \(evm.baseCurrency.rawValue ) ="
+        quoteCurrencyLbl.text = evm.quoteCurrency.rawValue
+        currencyTradingTxt.text = evm.baseCurrency.rawValue
         
         // home view model implementation
 //        vm.sourceAccount
@@ -133,9 +156,10 @@ class ExchangeViewController: UIViewController {
     }
     
     private func uiSetup() {
-        quoteCurrencyLbl.text = Currency.USD.rawValue
+        
     }
     
+    // MARK: - UIActions
     @IBAction func exchangePressed(_ sender: Any) {
         guard let intendedAmount = Double(amountBuyingTxt.text!) else {
             return
@@ -146,11 +170,16 @@ class ExchangeViewController: UIViewController {
             return
         }
         let exchangeRate = Double(exchangeRateTxt.text!)!
-        evm.exchange(amount: intendedAmount, rate: exchangeRate)
+        let equivalentAmount = Double(exchangedValueLbl.text!)!
+        evm.exchange(amount: intendedAmount, equivalentAmount: equivalentAmount,rate: exchangeRate)
     }
     
     @IBAction func amountChanged(_ sender: Any) {
         updateExchangedValue()
+    }
+    
+    @IBAction func swapTrading(_ sender: Any) {
+        evm.swapTradingMode()
     }
     
     private func updateExchangedValue() {
@@ -159,7 +188,12 @@ class ExchangeViewController: UIViewController {
             return
         }
         let exchangeRate = Double(self.exchangeRateTxt.text!)!
-        exchangedValueLbl.text = "\(intendedAmount/exchangeRate)"
+        
+        if evm.isBuying.value {
+            exchangedValueLbl.text = "\(intendedAmount/exchangeRate)"
+        } else {
+            exchangedValueLbl.text = "\(intendedAmount * exchangeRate)"
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
