@@ -86,6 +86,11 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         guard let amountSending = Double(amountSendingTxt.text!) else {
             return
         }
+        guard amountSending <= vm.selectedAccount.value.balance else {
+            // add alert
+            print("not enough found")
+            return
+        }
         vm.transfer(amountSending)
     }
     

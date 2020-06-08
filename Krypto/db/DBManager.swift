@@ -13,11 +13,13 @@ class DBManager {
     var accountRepository: AccountRepository
     var transactionRepository: TransactionRepository
     var accountContactRepository: AccountContactRepository
+    var cardRepository: CardRepository
     
     private init() {
         accountRepository = AccountRepository()
         transactionRepository = TransactionRepository()
         accountContactRepository = AccountContactRepository()
+        cardRepository = CardRepository()
     }
     
     func initSampleData() {
