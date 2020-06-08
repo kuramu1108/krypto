@@ -15,8 +15,6 @@ class HomeViewModel {
     public let accounts: BehaviorRelay<Results<Account>>
     public let currentAccount: BehaviorRelay<Account>
     public let loading: PublishSubject<Bool> = PublishSubject()
-//    public let btcRates: PublishSubject<Rate> = PublishSubject()
-//    public let destinationAccount: PublishSubject<Account> = PublishSubject()
     
     private let disposeBag = DisposeBag()
     

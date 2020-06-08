@@ -22,7 +22,8 @@ class HomeViewController: UIViewController {
     let cardWidthScale: CGFloat = 0.8
     var previousOffset: CGFloat = 0
     var currentItem: Int = 0
-     
+    
+    let df = DateFormatter()
     
     var vm = HomeViewModel()
     let disposeBag = DisposeBag()
@@ -51,6 +52,9 @@ class HomeViewController: UIViewController {
         
         transactionTV.delegate = self
         transactionTV.dataSource = self
+        
+        df.locale = Locale.init(identifier: "en_AU")
+        df.dateFormat = "dd MMM"
     }
     
     private func setupBindings() {
@@ -76,13 +80,22 @@ class HomeViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "exchangeSegue" {
+        switch segue.identifier {
+        case "exchangeSegue":
             guard let destinationVC = segue.destination as? ExchangeViewController else {
                 return
             }
             let fromAcc = vm.requestAccount(currency: Currency.USD)
             let toAcc = vm.currentAccount.value
             destinationVC.evm = ExchangeViewModel(fromAcc: fromAcc, toAcc: toAcc)
+        case "depositSegue":
+            guard let destinationVC = segue.destination as? DepositViewController else {
+                return
+            }
+            let toAcc = vm.currentAccount.value
+            destinationVC.vm = DepositViewModel(toAcc: toAcc)
+        default:
+            return
         }
     }
     
@@ -140,16 +153,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = transactionTV.dequeueReusableCell(withIdentifier: id, for: indexPath) as? TransactionTVCell else {
             fatalError("unable to dequeue")
         }
-        let transaction = vm.currentAccount.value.transactions[indexPath.item]
+        let historyCount = vm.currentAccount.value.transactions.count
+        // reversing list, more effiicient then resorting the list
+        let transaction = vm.currentAccount.value.transactions[historyCount - indexPath.item - 1]
         switch transaction.type {
         case .Deposit:
             cell.transactionIcon.image = UIImage(named: TransactionType.Deposit.rawValue)
             cell.transactionAmount.text = "+ \(transaction.inAmount)"
             cell.transactionAmount.textColor = UIColor.systemGreen
+            cell.transactionDescription.text = "Deposit"
         case .Transfer:
             cell.transactionIcon.image = UIImage(named: TransactionType.Transfer.rawValue)
             cell.transactionAmount.text = "- \(transaction.outAmount)"
             cell.transactionAmount.textColor = UIColor.systemRed
+            cell.transactionDescription.text = "Transfer to \(transaction.toAccount)"
         default:
             // out
             if vm.currentAccount.value.name == transaction.fromAccount {
@@ -160,7 +177,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.transactionAmount.textColor = UIColor.systemGreen
             }
             cell.transactionIcon.image = UIImage(named: "Exchange")
+            if transaction.type == TransactionType.Buy {
+                cell.transactionDescription.text = "Buying \(transaction.inCurrency.rawValue)"
+            } else { // sell
+                cell.transactionDescription.text = "Selling \(transaction.outCurrency.rawValue)"
+            }
         }
+        cell.transactionDate.text = df.string(from: transaction.date)
         return cell
     }
 }

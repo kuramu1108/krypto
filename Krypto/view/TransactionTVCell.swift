@@ -11,6 +11,7 @@ import UIKit
 class TransactionTVCell: UITableViewCell {
     @IBOutlet weak var transactionIcon: UIImageView!
     @IBOutlet weak var transactionDescription: UILabel!
+    @IBOutlet weak var transactionDate: UILabel!
     @IBOutlet weak var transactionAmount: UILabel!
     
     override func awakeFromNib() {
