@@ -807,7 +807,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I9F-L1-zZx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3ls-0e-LfX"/>
+                    <navigationItem key="navigationItem" title="Trading" id="3ls-0e-LfX"/>
                     <connections>
                         <outlet property="amountBuyingTxt" destination="AK2-wz-Hyj" id="RII-qD-taU"/>
                         <outlet property="baseCurrencyLbl" destination="ssh-rm-9c1" id="SzI-gL-yqc"/>
@@ -1250,7 +1250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ga2-4f-5cs"/>
+        <segue reference="aXN-70-ksO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

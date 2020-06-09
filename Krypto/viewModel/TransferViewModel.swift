@@ -32,6 +32,7 @@ class TransferViewModel {
         transaction.outAmount = amount
         transaction.outCurrency = selectedAccount.value.currency
         transaction.comment = "Sending to \(selectedAccountContact!.ownerName)"
+        transaction.date = Date()
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: selectedAccount.value, transaction: transaction)
         trading.onNext(false)
