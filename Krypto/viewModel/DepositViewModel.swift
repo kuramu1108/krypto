@@ -33,6 +33,7 @@ class DepositViewModel {
         transaction.inAmount = amount
         transaction.inCurrency = toAccount.currency
         transaction.fromAccount = selectedCard.value!.name
+        transaction.date = Date()
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: toAccount, transaction: transaction)
         
