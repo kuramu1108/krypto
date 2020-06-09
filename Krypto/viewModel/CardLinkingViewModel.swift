@@ -11,5 +11,9 @@ import RxSwift
 import RxCocoa
 
 class CardLinkingViewModel {
+    var card: Card = Card()
     
+    func saveCard(cardNumber: String, cardHolder:String, expiryDate:String, cvv: String) {
+        
+    }
 }

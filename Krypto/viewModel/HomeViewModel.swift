@@ -32,7 +32,7 @@ class HomeViewModel {
         accounts.accept(DBManager.sharedInstance.accountRepository.getAll())
     }
     
-    func requestAccountObservable(currency: Currency) -> Observable<Results<Account>> {
+    func requestAccountsObservable(currency: Currency) -> Observable<Results<Account>> {
         return DBManager.sharedInstance.accountRepository.getObservableWith(currency: currency)
     }
     
@@ -43,22 +43,4 @@ class HomeViewModel {
     func switchAccount(to index: Int) {
         currentAccount.accept(accounts.value[index])
     }
-//
-//    func requestCurrentAccount(source currencySource: Currency, destination currencyDest: Currency) {
-//        DBManager.sharedInstance.accountRepository.getObservableWith(currency: currencySource)
-//            .subscribe(onNext: { [unowned self] (results) in
-//                self.sourceAccount.onNext(results[0])
-//            }, onDisposed: {
-//                print("Home disposed")
-//            })
-//        .disposed(by: disposeBag)
-//
-//        DBManager.sharedInstance.accountRepository.getObservableWith(currency: currencyDest)
-//            .subscribe(onNext: { [unowned self] (results) in
-//                self.destinationAccount.onNext(results[0])
-//            }, onDisposed: {
-//                print("Home disposed")
-//            })
-//        .disposed(by: disposeBag)
-//    }
 }

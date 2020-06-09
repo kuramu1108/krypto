@@ -14,6 +14,8 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var accountCurrency: UIImageView!
     @IBOutlet weak var bg: UIView!
     
+    
+    
     var account: Account! {
         didSet {
             self.updateUI()
@@ -25,9 +27,10 @@ class CardCollectionViewCell: UICollectionViewCell {
             accountName.text = account.name
             accountBalance.text = String(account.balance)
             accountCurrency.image = UIImage(named: account.currency.rawValue)
-            
             bg.layer.cornerRadius = 10.0
             bg.layer.masksToBounds = false
         }
     }
 }
+
+

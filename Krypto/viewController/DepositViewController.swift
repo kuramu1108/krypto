@@ -34,7 +34,6 @@ class DepositViewController: UIViewController {
         paymentPicker.dataSource = self
         accountNameLbl.text = vm.toAccount.name
         paymentMethodTxt.inputView = paymentPicker
-//        paymentMethodTxt.text = vm.mockCards[0].name
     }
     
     private func setupBinding() {
@@ -70,17 +69,6 @@ class DepositViewController: UIViewController {
             .disposed(by: bag)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     @IBAction func deposit(_ sender: Any) {
         guard let amountDepositing = Double(amountDepositingTxt.text!) else {
             return
@@ -102,17 +90,18 @@ class DepositViewController: UIViewController {
 
 }
 
+// MARK: - PickerView
 extension DepositViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return vm.mockCards.count
+        return vm.cards.value.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return vm.mockCards[row].name
+        return vm.cards.value[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

@@ -20,10 +20,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="mR1-zl-CM4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="350"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="350" id="yMY-BY-aFF"/>
+                                            <constraint firstAttribute="height" constant="300" id="yMY-BY-aFF"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jOR-tg-Ah0">
                                             <size key="itemSize" width="400" height="300"/>
@@ -33,23 +33,23 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCollectionViewCell" id="D6h-PL-BM9" customClass="CardCollectionViewCell" customModule="Krypto" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25" width="400" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="han-b0-0Gf">
                                                     <rect key="frame" x="0.0" y="0.0" width="400" height="300"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-eT-1BI">
-                                                            <rect key="frame" x="28" y="8" width="344" height="284"/>
+                                                            <rect key="frame" x="8" y="8" width="384" height="284"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2F8-tW-ROx">
-                                                                    <rect key="frame" x="30" y="30" width="129" height="24"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                    <rect key="frame" x="30" y="30" width="126.5" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ICW-7f-M5A">
-                                                                    <rect key="frame" x="254" y="60" width="60" height="60"/>
+                                                                    <rect key="frame" x="294" y="60" width="60" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="60" id="XZd-AJ-SOh"/>
                                                                         <constraint firstAttribute="width" constant="60" id="wTk-ac-hOH"/>
@@ -77,22 +77,22 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="JMV-eT-1BI" firstAttribute="top" secondItem="han-b0-0Gf" secondAttribute="topMargin" id="0ad-69-wtb"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="JMV-eT-1BI" secondAttribute="trailing" constant="20" id="F9b-59-lMq"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="JMV-eT-1BI" secondAttribute="trailing" id="F9b-59-lMq"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="JMV-eT-1BI" secondAttribute="bottom" id="aiV-eB-UAx"/>
-                                                        <constraint firstItem="JMV-eT-1BI" firstAttribute="leading" secondItem="han-b0-0Gf" secondAttribute="leadingMargin" constant="20" id="vBO-Rz-Bed"/>
+                                                        <constraint firstItem="JMV-eT-1BI" firstAttribute="leading" secondItem="han-b0-0Gf" secondAttribute="leadingMargin" id="vBO-Rz-Bed"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
                                                     <outlet property="accountBalance" destination="hUZ-8x-U7P" id="lNe-oI-zBd"/>
                                                     <outlet property="accountCurrency" destination="ICW-7f-M5A" id="B3A-Hu-lx1"/>
                                                     <outlet property="accountName" destination="2F8-tW-ROx" id="0gR-rG-Uu5"/>
-                                                    <outlet property="bg" destination="JMV-eT-1BI" id="3H8-vP-o3B"/>
+                                                    <outlet property="bg" destination="JMV-eT-1BI" id="FjY-rM-cU8"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zDI-mT-Xac">
-                                        <rect key="frame" x="0.0" y="350" width="414" height="94"/>
+                                        <rect key="frame" x="0.0" y="300" width="414" height="94"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="9M3-Cn-dgt">
                                                 <rect key="frame" x="34.5" y="0.0" width="345" height="60"/>
@@ -159,7 +159,7 @@
                                         </subviews>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hZ2-c3-IIe">
-                                        <rect key="frame" x="0.0" y="444" width="414" height="281"/>
+                                        <rect key="frame" x="0.0" y="394" width="414" height="331"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomeTransactionCell" id="o7g-gs-eT3" customClass="TransactionTVCell" customModule="Krypto" customModuleProvider="target">
@@ -248,13 +248,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRF-LA-Eyf">
-                                <rect key="frame" x="20" y="83" width="133" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
-                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the card number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBV-R6-WpK">
                                 <rect key="frame" x="20" y="146" width="176" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -288,7 +281,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-DM-qe8">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="dd/mm/year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ff0-DM-qe8">
                                 <rect key="frame" x="43" y="384" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -301,7 +294,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkM-9o-sgm">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3 digit " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pkM-9o-sgm">
                                 <rect key="frame" x="247" y="384" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -315,11 +308,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Link Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRF-LA-Eyf">
+                                <rect key="frame" x="20" y="87" width="133" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="27"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="LinkCard" image="creditcard" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="CVVField" destination="pkM-9o-sgm" id="oBv-67-Fyg"/>
+                        <outlet property="CardNumberField" destination="Dzn-RS-Dag" id="cX3-NW-w26"/>
+                        <outlet property="ExpireDateField" destination="Ff0-DM-qe8" id="WNj-BS-JEG"/>
+                        <outlet property="NameField" destination="rhb-ov-Cwd" id="hqv-1i-bXm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
