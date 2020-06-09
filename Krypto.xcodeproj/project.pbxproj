@@ -126,6 +126,7 @@
 				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
 				3268CC6A248A5FC10070181E /* ReceiptViewController.swift */,
 				324DF75C248E0BF200652C94 /* DepositViewController.swift */,
+				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -169,7 +170,6 @@
 				32927217248235CB00AD5DB6 /* api */,
 				32927210248218E600AD5DB6 /* db */,
 				329272052481D96A00AD5DB6 /* model */,
-				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 				329271F524808DE900AD5DB6 /* SecondViewController.swift */,
 				329271F724808DEA00AD5DB6 /* Main.storyboard */,
 				329271FA24808DED00AD5DB6 /* Assets.xcassets */,

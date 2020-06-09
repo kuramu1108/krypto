@@ -14,7 +14,6 @@ import RealmSwift
 class DepositViewModel {
     var toAccount: Account
     var transaction = Transaction()
-    var mockCards = [Card]()
     var cards: BehaviorRelay<Results<Card>>
     let loading: PublishSubject<Bool> = PublishSubject()
     let selectedCard: BehaviorRelay<Card?> = BehaviorRelay(value: nil)
@@ -22,13 +21,6 @@ class DepositViewModel {
     init(toAcc: Account) {
         toAccount = toAcc
         cards = BehaviorRelay(value: DBManager.sharedInstance.cardRepository.getAll())
-        
-        let card = Card()
-        card.name = "visa"
-        let card1 = Card()
-        card1.name = "mastercard"
-        mockCards.append(card)
-        mockCards.append(card1)
     }
     
     func selectCard(at row: Int) {

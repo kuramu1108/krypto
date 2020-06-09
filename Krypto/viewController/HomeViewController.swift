@@ -105,6 +105,7 @@ class HomeViewController: UIViewController {
     }
 }
 
+// MARK: - CollectionView
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -143,6 +144,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+// MARK: - TableView
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vm.currentAccount.value.transactions.count
