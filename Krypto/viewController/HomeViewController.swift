@@ -18,8 +18,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var exchangeBtn: UIButton!
     @IBOutlet weak var transactionTV: UITableView!
     
-    let cardHeightScale: CGFloat = 0.6
+    let cardHeightScale: CGFloat = 0.7
     let cardWidthScale: CGFloat = 0.8
+    var cellWidth: CGFloat!
+    var cellHeight: CGFloat!
+    var insetX: CGFloat!
+    var insetY: CGFloat!
     var previousOffset: CGFloat = 0
     var currentItem: Int = 0
     
@@ -38,11 +42,10 @@ class HomeViewController: UIViewController {
     }
 
     private func setupUI() {
-        let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * cardWidthScale)
-        let cellHeight = floor(cardCollectionView.bounds.height * cardHeightScale)
-        let insetX = (view.bounds.width - cellWidth) / 2.0
-        let insetY = (cardCollectionView.bounds.height - cellHeight) / 2.0
+        cellWidth = floor(cardCollectionView.bounds.width * cardWidthScale)
+        cellHeight = floor(cardCollectionView.bounds.height * cardHeightScale)
+        insetX = (cardCollectionView.bounds.width - cellWidth) / 2.0
+        insetY = (cardCollectionView.bounds.height - cellHeight) / 2.0
         
         let layout = cardCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
@@ -118,6 +121,12 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as! CardCollectionViewCell
         cell.account = vm.accounts.value[indexPath.item]
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.masksToBounds = false
+        let newRect = CGRect.init(x: cell.bounds.minX+insetX/2.0, y: cell.bounds.minY+insetY/2.0, width: cellWidth - insetX/2.0, height: cellHeight - insetY/2.0)
+        cell.layer.shadowPath = UIBezierPath(roundedRect: newRect, cornerRadius: CGFloat(10.0)).cgPath
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        cell.layer.shadowOpacity = 0.4
         return cell
     }
    

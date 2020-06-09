@@ -25,7 +25,6 @@ class CardCollectionViewCell: UICollectionViewCell {
             accountName.text = account.name
             accountBalance.text = String(account.balance)
             accountCurrency.image = UIImage(named: account.currency.rawValue)
-            
             bg.layer.cornerRadius = 10.0
             bg.layer.masksToBounds = false
         }
