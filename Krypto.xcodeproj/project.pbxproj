@@ -25,7 +25,7 @@
 		329271F024808DE900AD5DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271EF24808DE900AD5DB6 /* AppDelegate.swift */; };
 		329271F224808DE900AD5DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F124808DE900AD5DB6 /* SceneDelegate.swift */; };
 		329271F424808DE900AD5DB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F324808DE900AD5DB6 /* HomeViewController.swift */; };
-		329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F524808DE900AD5DB6 /* SecondViewController.swift */; };
+		329271F624808DE900AD5DB6 /* CardLinkingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329271F524808DE900AD5DB6 /* CardLinkingViewController.swift */; };
 		329271F924808DEA00AD5DB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329271F724808DEA00AD5DB6 /* Main.storyboard */; };
 		329271FB24808DED00AD5DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 329271FA24808DED00AD5DB6 /* Assets.xcassets */; };
 		329271FE24808DED00AD5DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 329271FC24808DED00AD5DB6 /* LaunchScreen.storyboard */; };
@@ -62,7 +62,7 @@
 		329271EF24808DE900AD5DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		329271F124808DE900AD5DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		329271F324808DE900AD5DB6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		329271F524808DE900AD5DB6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		329271F524808DE900AD5DB6 /* CardLinkingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkingViewController.swift; sourceTree = "<group>"; };
 		329271F824808DEA00AD5DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		329271FA24808DED00AD5DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		329271FD24808DED00AD5DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 				3268CC6A248A5FC10070181E /* ReceiptViewController.swift */,
 				324DF75C248E0BF200652C94 /* DepositViewController.swift */,
 				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
+				329271F524808DE900AD5DB6 /* CardLinkingViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -170,7 +171,6 @@
 				32927217248235CB00AD5DB6 /* api */,
 				32927210248218E600AD5DB6 /* db */,
 				329272052481D96A00AD5DB6 /* model */,
-				329271F524808DE900AD5DB6 /* SecondViewController.swift */,
 				329271F724808DEA00AD5DB6 /* Main.storyboard */,
 				329271FA24808DED00AD5DB6 /* Assets.xcassets */,
 				329271FC24808DED00AD5DB6 /* LaunchScreen.storyboard */,
@@ -363,7 +363,7 @@
 				329272072481D99700AD5DB6 /* Account.swift in Sources */,
 				329272192482361E00AD5DB6 /* ApiService.swift in Sources */,
 				324DF75B248E0AAD00652C94 /* DepositViewModel.swift in Sources */,
-				329271F624808DE900AD5DB6 /* SecondViewController.swift in Sources */,
+				329271F624808DE900AD5DB6 /* CardLinkingViewController.swift in Sources */,
 				329272092481DC7400AD5DB6 /* Transaction.swift in Sources */,
 				325D17D52488C121000ED681 /* Constants.swift in Sources */,
 				329272142482194F00AD5DB6 /* AccountRepository.swift in Sources */,

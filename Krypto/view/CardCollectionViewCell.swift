@@ -14,8 +14,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var accountCurrency: UIImageView!
     @IBOutlet weak var bg: UIView!
     
-    
-    
     var account: Account! {
         didSet {
             self.updateUI()
@@ -36,5 +34,3 @@ class CardCollectionViewCell: UICollectionViewCell {
         }
     }
 }
-
-
