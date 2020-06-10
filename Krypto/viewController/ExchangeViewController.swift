@@ -127,36 +127,13 @@ class ExchangeViewController: UIViewController {
                 }
             })
             .disposed(by: disposeBag)
-        
+    }
+    
+    private func uiSetup() {
         // static views
         baseCurrencyLbl.text = "1 \(evm.baseCurrency.rawValue ) ="
         quoteCurrencyLbl.text = evm.quoteCurrency.rawValue
         currencyTradingTxt.text = evm.baseCurrency.rawValue
-        
-        // home view model implementation
-//        vm.sourceAccount
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { [unowned self] (account) in
-//                self.cashBalanceTxt.text = "$\(String(account.balance)) \(account.currency.rawValue)"
-//                self.baseCurrencyLbl.text = "1 \(account.currency.rawValue ) ="
-//            })
-//            .disposed(by: disposeBag)
-//
-//        vm.destinationAccount
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onNext: { [unowned self] account in
-//                self.currencyBuyingTxt.text = account.currency.rawValue
-//                self.exchangedCurrency.text = account.currency.rawValue
-//            }, onDisposed: {
-//                print("account disposed")
-//            })
-//            .disposed(by: disposeBag)
-//
-//        vm.requestCurrentAccount(source: Currency.USD, destination: Currency.BTC)
-    }
-    
-    private func uiSetup() {
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -173,7 +150,11 @@ class ExchangeViewController: UIViewController {
         }
         guard intendedAmount <= evm.fromAccount.balance else {
             // add alert
-            print("not enough found")
+            let alert = UIAlertController(title: "Not Enough Fund", message: "You need to deposit more fund to make this transaction", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                return
+            }))
+            self.present(alert, animated: true)
             return
         }
         let exchangeRate = Double(exchangeRateTxt.text!)!

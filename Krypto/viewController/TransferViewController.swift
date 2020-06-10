@@ -86,6 +86,14 @@ class TransferViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         guard let amountSending = Double(amountSendingTxt.text!) else {
             return
         }
+        guard amountSending <= vm.selectedAccount.value.balance else {
+            let alert = UIAlertController(title: "Not Enough Fund", message: "You need to deposit more fund to make this transaction", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                return
+            }))
+            self.present(alert, animated: true)
+            return
+        }
         vm.transfer(amountSending)
     }
     
