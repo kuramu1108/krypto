@@ -16,6 +16,7 @@
 		324DF763248E252400652C94 /* CardLinkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF762248E252400652C94 /* CardLinkingViewModel.swift */; };
 		3259EAF424905C4000DD8A6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259EAF324905C4000DD8A6D /* LoginViewController.swift */; };
 		3259EAF624905C6500DD8A6D /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259EAF524905C6500DD8A6D /* TransactionHistoryViewController.swift */; };
+		3259EAF8249061D700DD8A6D /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259EAF7249061D700DD8A6D /* UserRepository.swift */; };
 		325D17AC24865466000ED681 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AB24865466000ED681 /* TransferViewController.swift */; };
 		325D17AE24865B27000ED681 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AD24865B27000ED681 /* ExchangeViewController.swift */; };
 		325D17D52488C121000ED681 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17D42488C121000ED681 /* Constants.swift */; };
@@ -54,6 +55,7 @@
 		324DF762248E252400652C94 /* CardLinkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkingViewModel.swift; sourceTree = "<group>"; };
 		3259EAF324905C4000DD8A6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3259EAF524905C6500DD8A6D /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
+		3259EAF7249061D700DD8A6D /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		325D17AB24865466000ED681 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		325D17AD24865B27000ED681 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		325D17D42488C121000ED681 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3292721524821A7A00AD5DB6 /* TransactionRepository.swift */,
 				3268CC662488D96B0070181E /* AccountContactRepository.swift */,
 				324DF760248E249300652C94 /* CardRepository.swift */,
+				3259EAF7249061D700DD8A6D /* UserRepository.swift */,
 			);
 			path = db;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				3268CC652488D8D70070181E /* AccountContact.swift in Sources */,
 				3292721B2482430E00AD5DB6 /* Rate.swift in Sources */,
 				324DF75D248E0BF200652C94 /* DepositViewController.swift in Sources */,
+				3259EAF8249061D700DD8A6D /* UserRepository.swift in Sources */,
 				3259EAF624905C6500DD8A6D /* TransactionHistoryViewController.swift in Sources */,
 				3292720F2482108E00AD5DB6 /* HomeViewModel.swift in Sources */,
 				324DF761248E249300652C94 /* CardRepository.swift in Sources */,
