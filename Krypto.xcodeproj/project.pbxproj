@@ -14,6 +14,8 @@
 		324DF75F248E106B00652C94 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF75E248E106B00652C94 /* Card.swift */; };
 		324DF761248E249300652C94 /* CardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF760248E249300652C94 /* CardRepository.swift */; };
 		324DF763248E252400652C94 /* CardLinkingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324DF762248E252400652C94 /* CardLinkingViewModel.swift */; };
+		3259EAF424905C4000DD8A6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259EAF324905C4000DD8A6D /* LoginViewController.swift */; };
+		3259EAF624905C6500DD8A6D /* TransactionHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3259EAF524905C6500DD8A6D /* TransactionHistoryViewController.swift */; };
 		325D17AC24865466000ED681 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AB24865466000ED681 /* TransferViewController.swift */; };
 		325D17AE24865B27000ED681 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17AD24865B27000ED681 /* ExchangeViewController.swift */; };
 		325D17D52488C121000ED681 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325D17D42488C121000ED681 /* Constants.swift */; };
@@ -50,6 +52,8 @@
 		324DF75E248E106B00652C94 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		324DF760248E249300652C94 /* CardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepository.swift; sourceTree = "<group>"; };
 		324DF762248E252400652C94 /* CardLinkingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLinkingViewModel.swift; sourceTree = "<group>"; };
+		3259EAF324905C4000DD8A6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3259EAF524905C6500DD8A6D /* TransactionHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewController.swift; sourceTree = "<group>"; };
 		325D17AB24865466000ED681 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		325D17AD24865B27000ED681 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		325D17D42488C121000ED681 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -125,9 +129,11 @@
 				325D17AB24865466000ED681 /* TransferViewController.swift */,
 				325D17AD24865B27000ED681 /* ExchangeViewController.swift */,
 				3268CC6A248A5FC10070181E /* ReceiptViewController.swift */,
+				3259EAF324905C4000DD8A6D /* LoginViewController.swift */,
 				324DF75C248E0BF200652C94 /* DepositViewController.swift */,
 				329271F324808DE900AD5DB6 /* HomeViewController.swift */,
 				329271F524808DE900AD5DB6 /* CardLinkingViewController.swift */,
+				3259EAF524905C6500DD8A6D /* TransactionHistoryViewController.swift */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -369,9 +375,11 @@
 				329272142482194F00AD5DB6 /* AccountRepository.swift in Sources */,
 				3268CC6B248A5FC10070181E /* ReceiptViewController.swift in Sources */,
 				325D17D72488C712000ED681 /* ExchangeViewModel.swift in Sources */,
+				3259EAF424905C4000DD8A6D /* LoginViewController.swift in Sources */,
 				3268CC652488D8D70070181E /* AccountContact.swift in Sources */,
 				3292721B2482430E00AD5DB6 /* Rate.swift in Sources */,
 				324DF75D248E0BF200652C94 /* DepositViewController.swift in Sources */,
+				3259EAF624905C6500DD8A6D /* TransactionHistoryViewController.swift in Sources */,
 				3292720F2482108E00AD5DB6 /* HomeViewModel.swift in Sources */,
 				324DF761248E249300652C94 /* CardRepository.swift in Sources */,
 				324DF757248D156100652C94 /* CardCollectionViewCell.swift in Sources */,
