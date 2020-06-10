@@ -49,6 +49,7 @@ class DBManager {
         
         let transaction1 = Transaction()
         transaction1.type = TransactionType.Deposit
+        transaction1.fromAccount = "Po's Account"
         transaction1.toAccount = cash.name
         transaction1.inAmount = 10000
         transaction1.comment = "init deopsit"
@@ -57,6 +58,7 @@ class DBManager {
         
         let transaction2 = Transaction()
         transaction2.type = TransactionType.Deposit
+        transaction2.fromAccount = "Po's Account"
         transaction2.toAccount = btc.name
         transaction2.inAmount = 1.234
         transaction2.comment = "init deopsit"
@@ -65,6 +67,7 @@ class DBManager {
         
         let transaction3 = Transaction()
         transaction3.type = TransactionType.Deposit
+        transaction3.fromAccount = "Po's Account"
         transaction3.toAccount = eth.name
         transaction3.inAmount = 145
         transaction3.comment = "init deopsit"
@@ -73,6 +76,7 @@ class DBManager {
         
         let transaction4 = Transaction()
         transaction4.type = TransactionType.Deposit
+        transaction4.fromAccount = "Po's Account"
         transaction4.toAccount = xrp.name
         transaction4.inAmount = 754
         transaction4.comment = "init deopsit"

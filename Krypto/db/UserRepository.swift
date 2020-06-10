@@ -27,7 +27,7 @@ class UserRepository {
             let user = User()
             user.firstName = "Gary"
             user.lastName = "Bereren"
-            user.loginId = "bereren1234"
+            user.loginId = "12345678"
             user.password = "88888888"
             try! realm.write {
                 realm.add(user)

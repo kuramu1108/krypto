@@ -10,6 +10,7 @@ import UIKit
 
 class ReceiptViewController: UIViewController {
     var transaction: Transaction!
+    var isFromHistory: Bool = false
 
     @IBOutlet weak var typeLbl: UILabel!
     
@@ -64,6 +65,10 @@ class ReceiptViewController: UIViewController {
     }
 
     @IBAction func done(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToHome", sender: self)
+        if isFromHistory {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "unwindToHome", sender: self)
+        }
     }
 }

@@ -12,6 +12,7 @@ class TransactionHistoryViewController: UITableViewController {
     var account: Account!
 
     let df = DateFormatter()
+    var selected: Transaction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,13 @@ class TransactionHistoryViewController: UITableViewController {
         df.dateFormat = "dd MMM"
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destVC = segue.destination as? ReceiptViewController else {
+            return
+        }
+        destVC.transaction = selected
+        destVC.isFromHistory = true
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,5 +75,10 @@ class TransactionHistoryViewController: UITableViewController {
         }
         cell.transactionDate.text = df.string(from: transaction.date)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected = account.transactions[account.transactions.count - indexPath.item - 1]
+        performSegue(withIdentifier: "segueHistoryToReceipt", sender: self)
     }
 }
