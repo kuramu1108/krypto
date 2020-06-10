@@ -12,4 +12,6 @@ import RealmSwift
 class User: Object {
     @objc dynamic var firstName = ""
     @objc dynamic var lastName = ""
+    @objc dynamic var loginId = ""
+    @objc dynamic var password = ""
 }

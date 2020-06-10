@@ -14,4 +14,11 @@ class CardRepository {
         let realm = try! Realm()
         return realm.objects(Card.self)
     }
+    
+    func create(card: Card) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(card)
+        }
+    }
 }

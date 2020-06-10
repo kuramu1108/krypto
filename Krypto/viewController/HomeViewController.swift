@@ -97,6 +97,11 @@ class HomeViewController: UIViewController {
             }
             let toAcc = vm.currentAccount.value
             destinationVC.vm = DepositViewModel(toAcc: toAcc)
+        case "historySegue":
+            guard let destinationVC = segue.destination as? TransactionHistoryViewController else {
+                return
+            }
+            destinationVC.account = vm.currentAccount.value
         default:
             return
         }

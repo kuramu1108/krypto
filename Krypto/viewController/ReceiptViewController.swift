@@ -10,6 +10,7 @@ import UIKit
 
 class ReceiptViewController: UIViewController {
     var transaction: Transaction!
+    var isFromHistory: Bool = false
 
     @IBOutlet weak var typeLbl: UILabel!
     
@@ -47,12 +48,12 @@ class ReceiptViewController: UIViewController {
             amount1Lbl.text = "Buying"
             amount1Value.text = "\(String(format: "%.3f", transaction.inAmount)) \(transaction.inCurrency.rawValue)"
             amount2Lbl.text = "With"
-            amount2Value.text = "$ \(transaction.outAmount)"
+            amount2Value.text = "$ \(String(format: "%.3f", transaction.outAmount))"
         case TransactionType.Sell:
             amount1Lbl.text = "Selling"
             amount1Value.text = "\(String(format: "%.3f", transaction.outAmount)) \(transaction.outCurrency.rawValue)"
             amount2Lbl.text = "For"
-            amount2Value.text = "$ \(transaction.inAmount)"
+            amount2Value.text = "$ \(String(format: "%.3f", transaction.inAmount))"
         }
         
         fromLbl.text = transaction.fromAccount
@@ -64,6 +65,10 @@ class ReceiptViewController: UIViewController {
     }
 
     @IBAction func done(_ sender: Any) {
-        performSegue(withIdentifier: "unwindToHome", sender: self)
+        if isFromHistory {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "unwindToHome", sender: self)
+        }
     }
 }

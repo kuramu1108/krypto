@@ -65,6 +65,7 @@ class ExchangeViewModel {
         transaction.comment = "(1 \(baseCurrency.rawValue) = \(rate) \(quoteCurrency.rawValue))"
         transaction.outCurrency = fromAccount.currency
         transaction.inCurrency = toAccount.currency
+        transaction.date = Date()
         
         DBManager.sharedInstance.accountRepository.addTransaction(within: fromAccount, transaction: transaction)
         DBManager.sharedInstance.accountRepository.addTransaction(within: toAccount, transaction: transaction)

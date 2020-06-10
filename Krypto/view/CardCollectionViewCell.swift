@@ -14,8 +14,6 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var accountCurrency: UIImageView!
     @IBOutlet weak var bg: UIView!
     
-    
-    
     var account: Account! {
         didSet {
             self.updateUI()
@@ -25,12 +23,14 @@ class CardCollectionViewCell: UICollectionViewCell {
     func updateUI() {
         if let account = account {
             accountName.text = account.name
-            accountBalance.text = String(account.balance)
+            if account.currency == Currency.USD {
+                accountBalance.text = String(format: "%.2f", account.balance)
+            } else {
+                accountBalance.text = String(format: "%.6f", account.balance)
+            }
             accountCurrency.image = UIImage(named: account.currency.rawValue)
             bg.layer.cornerRadius = 10.0
             bg.layer.masksToBounds = false
         }
     }
 }
-
-

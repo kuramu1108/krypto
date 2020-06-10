@@ -12,8 +12,25 @@ import RxCocoa
 
 class CardLinkingViewModel {
     var card: Card = Card()
+    let isValidCard: PublishSubject<Bool> = PublishSubject()
     
-    func saveCard(cardNumber: String, cardHolder:String, expiryDate:String, cvv: String) {
-        
+    func saveCard(nickname:String, cardNumber: String, cardHolder:String, expiryMonth:String, expiryYear: String, cvv: String) {
+        if cardNumber.count != 16 || expiryMonth.count != 2 || expiryYear.count != 2 || cvv.count != 3 {
+            isValidCard.onNext(false)
+            return
+        }
+        if let mon = Int(expiryMonth) {
+            if mon > 12 {
+                isValidCard.onNext(false)
+                return
+            }
+        }
+        card.name = nickname
+        card.cardNumber = cardNumber
+        card.holderName = cardHolder
+        card.expiryDate = expiryMonth + "/" + expiryYear
+        card.cvv = cvv
+        DBManager.sharedInstance.cardRepository.create(card: card)
+        isValidCard.onNext(true)
     }
 }
