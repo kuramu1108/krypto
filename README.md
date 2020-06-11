@@ -5,7 +5,7 @@ https://www.coinapi.io/
 
 and reference it as `coinApiKey: <your key>` within keys.plist
 
-* Update: The key has been included for the sake of marking also considering this is a private repo, so please ignore instructions above
+* Update: The key has been included for the sake of marking also considering this is a private repo, so please ignore instructions above, also there is a daily request limit for the api
 
 ## UTS 
 41889 Application Development in the iOS Environment
