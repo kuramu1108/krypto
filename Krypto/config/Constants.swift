@@ -9,5 +9,5 @@
 import Foundation
 
 struct Constants {
-    static let RateUpdateInterval = 20
+    static let RateUpdateInterval = 60
 }
